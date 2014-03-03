@@ -1,0 +1,98 @@
+#form{
+	width: 475px;
+	float: left;
+}
+
+fieldset{padding: 15px;}
+
+#rfqField{margin-right: 15px;}
+
+label{
+	display: inline-block;
+	width: 125px;
+}
+
+label.error {
+	color: red;
+	font-weight: bold;
+	font-size: 0.8em;
+	width: auto;	
+}
+label.valid {color: green;}
+
+input{
+	font-size: 11pt;
+	width: 240px;
+	padding: 3px;
+	display: inline-block;
+}
+
+textarea{display: inline-block;}
+
+textarea{margin: 15px 0 15px 0;}
+
+#userfile{margin: 10px 0 10px 0;}
+
+#frmquote p, #formsubmit{clear: both;}
+
+#formSubmit{
+	margin: 10px 0 10px 0;	
+	width: 75px;
+}
+
+#ty_content {
+	display: none;
+	padding: 50px;
+	margin: auto;
+	font-size: 1.6em;
+	float: left;	
+}
+#validationfail {display: none;}
+
+#challengequestion {
+	border: 1px red dashed;
+	padding: 7px;
+	font-size: 10pt;
+}
+
+#challengequestion p{
+
+
+}
+
+/*****************/
+.contactNumbers{
+	float: right;
+	margin: 50px 100px 0 0;
+	text-align: center;
+	font-size: 16pt;
+}
+	
+#challengequestion label {width: auto;}
+
+#challengequestion input{
+	margin-left: 10px;
+	width: 20px;		
+}
+
+.requiredStyle{
+	font-style: italic;
+	color: #666;
+}
+
+/*******thanks page *****/
+#thanksContact{
+text-align: center;
+	height: 500px;
+}
+
+#thanksContact img{
+margin: 30px 0 30px;
+}
+
+#thanksContact .homeBtn{
+padding: 5px 10px 5px 10px;
+border: 1px solid gray;
+width: 200px;
+display:inline-block ;
+}

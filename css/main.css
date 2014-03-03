@@ -1,0 +1,454 @@
+/* This CSS page contains all CSS for HEADER, NAVIGATION, & FOOTER */
+html, body{height: 100%;}
+
+body{
+	background-image: url('../images/gradBkg.jpg');
+	background-repeat: repeat-x;
+
+}
+
+#wrapper{min-height: 100%;}
+
+#contentWrapper{
+	padding-bottom: 150px; /*STICKY FOOTER*/ 
+	padding-top: 25px;
+	width: 1000px;
+	margin: 0 auto;
+}
+
+#contentWrapper, #footer{
+position: relative;
+z-index: 0;
+}
+
+/*** landing page ***/
+.bkgLanding{
+
+	height: 117px;
+	width: 100%;
+    font-size: 13px;
+	color:#303030;
+	position: absolute;
+	z-index: -1;
+}
+
+/* HEADER */
+
+#header{
+	margin: 0 auto;
+	width: 1000px;
+	position: relative;
+}
+
+#topBar{
+	height: 45px;
+	text-align: right;
+	padding-top: 20px;
+}
+
+	#topBar p{
+		display: inline;
+		margin: 5px 40px 0;
+		height: 20px; 
+	}
+
+	#topBar p:first-child{
+		font-size: 14pt;
+		font-weight: bold;
+		color: #252469;
+	}
+
+	#topBar a{
+		font-size: 8pt;
+		margin-right: 20px;
+		font-weight: bold;
+		color: #252469;
+	}
+
+	#topBar img{
+		position: relative;
+		vertical-align: middle;
+		margin: -3px 5px 0 0;
+	}
+
+#logo{
+	position: relative;
+	width: 281px;
+	height: 50px; /*push logo div down to bottom of logo span*/
+	display: block;
+	float: left;
+}
+	#logo span{
+		background-image: url('../images/msfLogoWeb.jpg');
+		background-repeat: no-repeat;
+
+		position: absolute;
+		top:-40px;
+		left: 0px;
+		
+		width: 281px;
+		height: 91px;
+	}
+	
+#phoneHeader{
+	float: right;
+	font-size: 14pt;
+	margin: 0px 0 0 0 ;
+}
+
+/* NAVIGATION */
+
+.mainNav{
+	z-index: 1;
+	position: relative;
+	background: #252469;
+	float: left;
+	height: 40px;
+	width: 719px;
+	text-align: center;
+}
+
+.mainNav li{
+padding-top: 1px;
+	float: left;
+	position: relative;
+	vertical-align: middle;
+	line-height: 40px;
+	font-size: 10pt;
+	margin: 0 10px 0 10px;
+}
+	.mainNav li, .mainNav li a{
+		display: block;
+		height: 40px;
+		position: relative;
+		color: white;
+	}
+	
+		.mainNav li a:hover, .homeBody .mainNav li.home a, .aboutBody .mainNav li.about a, .contactBody .mainNav li.contact a{
+			position: absolute;
+			top:-1px;
+			left:0px;
+			background-image: url('../images/hovers.png');
+			height: 45px;
+			color: #252469;
+			padding-top: 3px;	
+		}
+		
+		.financeBody .mainNav li.recent-financings a {
+			width: 173px;
+			position: absolute;
+			top:-1px;
+			left:0px;
+			background-image: url('../images/hovers.png');
+			height: 45px;
+			color: #252469;
+			padding-top: 3px;
+			background-position: -246px 0px;	
+		}
+		.loanBody .mainNav li.loan-production a {
+			width:161px;
+			position: absolute;
+			top:-1px;
+			left:0px;
+			background-image: url('../images/hovers.png');
+			height: 45px;
+			color: #252469;
+			padding-top: 3px;
+			background-position: -85px 0px;
+		}
+		
+			.contactBody .mainNav li.contact a {
+			width:98px;
+			position: absolute;
+			top:-1px;
+			left:0px;
+			background-image: url('../images/hovers.png');
+			height: 45px;
+			color: #252469;
+			padding-top: 3px;
+			background-position: -500px 0px;
+			}
+
+li.home a:hover{
+	width:85px ;
+	background-position: 0 0px;
+}
+	
+li.home, li.home a{width: 85px;}
+
+li.loan-production, li.loan-production a{
+	width:161px ;
+}
+	li.loan-production a:hover{
+		width:161px;
+		background-position: -85px 0px;
+	}
+
+li.recent-financings, li.recent-financings a{
+	width: 173px;
+}
+
+	li.recent-financings a:hover{
+		width: 173px;
+		background-position: -246px 0px;	
+	}
+
+li.about, li.about a{
+	width:81px ;
+}
+
+	li.about a:hover{
+		width:81px ;
+		background-position: -419px 0px;	
+	}
+
+li.contact, li.contact a{
+	width: 98px;
+}
+
+	li.contact a:hover{
+		width: 98px;
+		background-position: -500px 0px;	
+	}
+	
+
+#underBar{
+	margin: 0 auto;
+	width: 1000px;
+	margin-bottom: 7px;
+
+}
+
+	.social{
+		padding-left: 15px;
+	}
+
+	.social li{
+		float: left;
+		margin: 8px 5px 0 5px; 
+		font-size: 10pt;
+		color: #6e6f71;
+	}
+
+	.social li:first-child{
+		margin: 15px 10px 0 10px; 
+	}
+	
+	#underBar p{
+		margin: 10px 200px 0 0;
+		float: right;
+		font-size: 11pt;
+		font-style: italic;
+		color: #252469;
+		font-weight: 100;
+	}
+
+/******** SUB MENU ************/
+.mainNav li:hover a {
+	position: absolute;
+	top:-1px;
+	left:0px;
+	background-image: url('../images/hovers.png');
+	height: 45px;
+	color: #252469;
+	padding-top: 3px;	
+}
+
+.mainNav li:hover .subMenu li.key-personnel a{background-image:none; position: static; color: white;}
+
+.mainNav .subMenu{
+	background: #252469;
+	border: 1px solid black;
+	padding: 10px;
+	width: 115px;
+
+	margin-left: -9999em;
+	text-align: left;
+	position: absolute;
+	top:45px;
+	left: 100px;;
+}
+
+.mainNav li:hover .subMenu{margin-left: -90px;}
+
+.mainNav li.about .subMenu li.key-personnel{
+	height: auto;
+
+	line-height: normal;
+}
+
+.mainNav li.about .subMenu li.key-personnel a{
+	background-image: none;
+	height: auto;
+	padding-top: 0px;
+	color: white;
+	width: auto;
+	height: auto;
+}
+
+.mainNav li.about .subMenu li.key-personnel a:hover{
+	color: #bc9d00;
+	width: inherit;
+	position: static;
+}
+
+.mainNav li.about a {
+background-position: -419px 0;
+}
+
+/***/
+
+
+
+/**************Sticky Hovers ************/
+
+
+/**********/
+/* FOOTER */
+/**********/
+#footerWrapper{
+	height: 85px;
+	background: -webkit-linear-gradient(#f3f3f3 50%, #b2b2b2 100%);
+	width: 100%;
+	border-top: 1px solid #d6d6d6;
+	position: relative;
+	margin-top: -86px;
+	clear: both;
+}
+
+#footer{
+	position: absolute;
+	top:-35px;
+	margin: 0 auto;
+	width: 970px;
+	font-size: 10pt;
+	padding: 15px 15px 15px 15px;
+	background: #252469;
+	left: 50%;
+	margin-left: -500px;
+	height: 35px;
+
+}
+
+#logoFooter{
+	position: relative;
+	width: 200px;
+	height: 62px; /*push logo div down to bottom of logo span*/
+	display: block;
+	float: left;
+}
+	#logoFooter span{
+		background-image: url('../images/msfLogo-white.png');
+		background-repeat: no-repeat;
+
+		position: absolute;
+		top:-12px;
+		left: 0px;
+		
+		width: 200px;
+		height: 62px;
+	}
+	
+
+#footer p{
+	font-size: 18pt;
+	font-weight: bold;
+	color: #a4a3d4;
+	float: right;
+	margin: 0 15px 0 15px;
+	line-height: 35px;
+
+}
+
+.socialFooter{
+	float: right;
+
+	margin-top: 7px;
+}
+
+.socialFooter li{
+	display: inline;
+	margin: 0 5px 0 5px;
+}
+
+#footer form .emailFooter{
+	float: right;
+	width: 200px;
+	height: 20px;
+	background-color: #a4a3d4; 
+	border: none;
+	color: white;
+	font-size: 10pt;
+margin-top: 5px;
+	position: relative;
+	vertical-align: middle;
+}
+
+#submitBtn{
+	width: 20px;
+	height: 20px;
+	float: right;
+	margin: 5px 0 0 5px;
+}
+
+::-webkit-input-placeholder {
+   color: white;
+   font-style: italic;
+   text-align: center;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   color: white;
+   font-style: italic;
+      text-align: center;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color: white;
+   font-style: italic;
+      text-align: center;
+}
+
+:-ms-input-placeholder {  
+   color: white;
+   font-style: italic;
+      ext-align: center;
+}
+
+.vertDivider{
+	background-image: url('../images/vertFooter.png');
+	width: 2px;
+	height: 39px;
+	float: right;
+	margin: 0px 30px 0px 20px;
+
+}
+
+#underFooter{
+	position: absolute;
+	top:35px;
+	margin: 0 auto;
+	width: 990px;
+	padding: 5px 5px 5px 5px;
+	left: 50%;
+	margin-left: -500px;
+	height: 35px;
+	font-size: 8pt;
+	color: #7d7d7d;
+}
+
+#underFooter ul{
+	float: left;
+}
+
+#underFooter li{
+	margin-bottom: 2px; 
+}
+
+#underFooter p{
+	float: right;
+	text-align: right;
+}
+
+.bold{font-weight: 600;}
+.red{color: red; font-size: 10pt;}
