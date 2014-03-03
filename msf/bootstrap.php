@@ -1,4 +1,6 @@
 <?php
+require_once('vendor/autoload.php');
+
 /**
  * Register autoload function for msf classes
  */
