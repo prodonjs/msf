@@ -6,20 +6,41 @@ namespace msf\models;
  * @author Jason
  */
 class Image {
+    const THUMBNAIL_PREFIX = 'thumb-';
 
+    /**
+     * Basename of image file
+     * @var string
+     */
     public $name;
 
+    /**
+     * Fully qualified image path
+     * @var string
+     */
     public $fullPath;
 
+    /**
+     * Fully qualified thumbnail image path
+     * @var string
+     */
     public $thumbnailPath;
 
+    /**
+     * Image file extension (jpg|png)
+     * @var string
+     */
     public $type;
 
+    /**
+     * Image size
+     * @var int
+     */
     public $sizeInBytes;
 
     /**
      * Creates an Image object from the specified path
-     * @param string $name
+     * @param string $filePath
      */
     public function __construct($filePath) {
         if(!file_exists($filePath)) {
@@ -32,7 +53,7 @@ class Image {
         $this->name = basename($this->fullPath);
         $this->sizeInBytes = filesize($this->fullPath);
         $this->type = substr($this->fullPath, -3);
-        $this->thumbnailPath = dirname($this->fullPath) . DS . "thumb-{$this->name}";
+        $this->thumbnailPath = dirname($this->fullPath) . DS . self::THUMBNAIL_PREFIX . $this->name;
     } // end __construct
 
     /**
@@ -107,7 +128,7 @@ class Image {
     }
 
     /**
-     * Simple extension checking for image type
+     * Validates image type based on the file extension
      * @param string $filePath
      * @return boolean
      */
@@ -123,7 +144,6 @@ class Image {
      */
     public static function CreateFromUpload($formField, $imagesPath) {
         $fileData = $_FILES[$formField];
-
         if($fileData['error'] !== UPLOAD_ERR_OK) {
             throw new \RuntimeException("{$fileData['name']} failed to upload");
         }
@@ -131,7 +151,6 @@ class Image {
         // Check for valid image types (PNG or JPG)
         $fileData['name'] = str_replace(' ', '_', strtolower($fileData['name']));
         $destination = $imagesPath . DS . $fileData['name'];
-
         if(self::IsValidImage($destination) && move_uploaded_file($fileData['tmp_name'], $destination)) {
             $image = new Image($fileData['name']);
             return $image;
@@ -139,9 +158,5 @@ class Image {
         else {
             throw new \RuntimeException("{$fileData['name']} failed to upload");
         }
-    } // end Upload()
-
-
+    } // end CreateFromUpload()
 } // end class Image
-
-?>

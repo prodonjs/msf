@@ -1,0 +1,22 @@
+{% extends "index.twig" %}
+{% block pageHeader %}
+<h1>Properties Management Console</h1>
+{% endblock %}
+
+{% block content %}
+{% for p in properties %}
+<div class="property">
+    <h2>{{ p.name|e }}</h2>
+    <p>
+        {{ p.city|e }}, {{ p.state|e }}<br>
+        {{ p.type|e }}
+    </p>
+    <p>
+        {{ p.description|e }}
+    </p>
+    <p>
+        <strong>Financed for: </strong>{{ p.amountFinanced|number_format }}
+    </p>
+</div>
+{% endfor %}
+{% endblock %}

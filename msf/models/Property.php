@@ -2,7 +2,18 @@
 namespace msf\models;
 
 class Property {
+    /**
+     * Model name used by data source
+     */
     const MODEL_NAME = 'property';
+
+    /**
+     * Preferred dimensions for property Image
+     */
+    const PREFERRED_IMG_WIDTH = 800;
+    const PREFERRED_IMG_HEIGHT = 600;
+    const THUMBNAIL_WIDTH = 150;
+    const THUMBNAIL_HEIGHT = 113;
 
     /**
      * Identifer
@@ -47,6 +58,18 @@ class Property {
     public $description;
 
     /**
+     * Closing date of financing
+     * @var string
+     */
+    public $closingDate;
+
+    /**
+     * Image associated with property
+     * @var msf\models\Image
+     */
+    public $image;
+
+    /**
      * Created date
      * @var string
      */
@@ -59,7 +82,8 @@ class Property {
     public $modified;
 
     /**
-     * Array of validation errors
+     * Array of validation errors keyed by fieldname
+     *
      * @var array
      */
     public $validationErrors;
@@ -82,6 +106,8 @@ class Property {
         'type',
         'amountFinanced',
         'description',
+        'closingDate',
+        'image',
         'created',
         'modified'
     );
@@ -110,6 +136,9 @@ class Property {
         if(empty($this->description)) {
             $this->validationErrors['description'] = 'Industry is a required attribute';
         }
+        if(empty($this->closingDate) || !strtotime($this->closingDate)) {
+            $this->validationErrors['closingDate'] = 'Closing date must be a valid date';
+        }
         return empty($this->validationErrors);
     } // end validate()
 
@@ -123,18 +152,38 @@ class Property {
             $this->id = md5("{$this->name}{$this->type}{$this->description}");
             $this->created = $this->modified;
         }
+        if(!$this->validate()) {
+            return false;
+        }
         $data = $this->toData();
         return $this->_dataSource->write($data, self::MODEL_NAME);
     } // end save()
 
     /**
-     * Returns an array of all relevant data fields
+     * Delete this Property from the data source
+     * @return boolean
+     */
+    public function delete() {
+        if($this->id) {
+            return $this->_dataSource->delete(self::MODEL_NAME, $this->id);
+        }
+        return false;
+    }
+
+    /**
+     * Transforms this object's data members into an associative
+     * array
      * @return array
      */
     public function toData() {
         $data = array();
         foreach($this->_dataFields as $f) {
-            $data[$f] = $this->{$f};
+            if($f === 'image' && $this->{$f}) {
+                $data[$f] = $this->image->fullPath;
+            }
+            else {
+                $data[$f] = $this->{$f};
+            }
         }
         return $data;
     } // end _toData()
@@ -144,8 +193,10 @@ class Property {
      * @return void
      */
     public function fromData($data) {
-        foreach($this->_dataFields as $f) {
-             $this->{$f} = $data[$f];
+        foreach($data as $f => $value) {
+            if($f !== 'image') {
+                $this->{$f} = $value;
+            }
         }
     } // end _toData()
 

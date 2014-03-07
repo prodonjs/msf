@@ -17,22 +17,14 @@ class PropertyTest extends \PHPUnit_Framework_TestCase {
         $this->property->description .= "Integer vitae viverra risus. Nam tincidunt ullamcorper nisl, non fermentum dui venenatis et. ";
         $this->property->description .= "Praesent mollis enim metus, a vestibulum neque pharetra sed. Mauris nec nulla sit amet orci consequat ";
         $this->property->description .= "scelerisque. Nulla facilisis semper ipsum, vel laoreet est congue ut.";
+        $this->property->closingDate = '2014-01-01';
+        $this->property->image = new \msf\models\Image(TEST_DATA_PATH . DS . 'images' . DS . 'png_test_image.png');
     } // end setUp()
 
     public function testValidation() {
         $this->assertTrue($this->property->validate());
         $this->assertEmpty($this->property->validationErrors);
     } // end testValidation_successful()
-
-    public function testValidation_unsuccessful() {
-        $this->property->name = '';
-        $this->property->city = '';
-        $this->property->state = 'ABC';
-        $this->property->type = '';
-        $this->property->amountFinanced = -500;
-        $this->assertFalse($this->property->validate());
-        $this->assertNotEmpty($this->property->validationErrors);
-    } // end testValidation_unsuccessful()
 
     public function testSave() {
         $fileName = $this->property->save();
@@ -41,6 +33,25 @@ class PropertyTest extends \PHPUnit_Framework_TestCase {
         $this->assertNotEmpty($fileName);
         $this->assertNotEmpty($id);
     } // end testSave()
+
+    public function testSaveAndDelete() {
+        $fileName = $this->property->save();
+
+        $this->assertTrue($this->property->delete());
+        $this->assertFileNotExists($fileName);
+    } // end testSave()
+
+    public function testSave_invalid() {
+        $this->property->name = '';
+        $this->property->city = '';
+        $this->property->state = 'ABC';
+        $this->property->type = '';
+        $this->property->amountFinanced = -500;
+        $this->property->closingDate = 'Not a date';
+        $this->assertFalse($this->property->validate());
+        $this->assertNotEmpty($this->property->validationErrors);
+        $this->assertEquals(6, count($this->property->validationErrors));
+    } // end testValidation_unsuccessful()
 
     public function testGet() {
         $property = \msf\models\Property::Get('test1', $this->testDataSource);
@@ -52,8 +63,16 @@ class PropertyTest extends \PHPUnit_Framework_TestCase {
     public function testFindAll() {
         $properties = \msf\models\Property::FindAll($this->testDataSource);
 
-        $this->assertEquals(4, count($properties));
+        $this->assertEquals(3, count($properties));
         $this->assertInstanceOf('msf\models\Property', $properties[0]);
     } // end testFindAll()
+
+    public function tearDown() {
+        // Remove all but the three explicit property test files
+        $filesToDelete = glob(TEST_DATA_PATH . DS . 'property_??????*.json');
+        foreach($filesToDelete as $f) {
+            unlink($f);
+        }
+    }
 
 } // end class PropertyTest

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>MS&amp;F {{ pageTitle }}</title>
+
+        <link href="css/main.css" rel="stylesheet" type="text/css" />
+        <link href="css/content.css" rel="stylesheet" type="text/css"/>
+        <link href="css/form.css" rel="stylesheet" type="text/css"/>
+        <link href="css/reset.css" rel="stylesheet" type="text/css"/>
+    </head>
+
+    <body class="homeBody">
+        <div id="wrapper">
+            <header id="header">
+                <div id="topBar">
+                    <p>(614) 396-5970</p>
+                    <a href=""><img src="images/arrow.png"/>CLIENT LOGIN</a>
+                </div>
+
+                <a id="logo" href="index.php">MS&F Real Estate Capital<span><!-- image replacement --></span></a>
+            </header>
+            <nav>
+                <ul class="mainNav">
+                    <li class="home"><a href="index.php">HOME</a></li>
+                    <li class="loan-production"><a href="loan-production.php">LOAN PRODUCTION</a></li>
+                    <li class="recent-financings"><a href="recent-financings.php">RECENT FINANCINGS</a></li>
+                    <li class="about"><a href="about.php">ABOUT</a>
+                        <ul class="subMenu">
+                            <li class="key-personnel"><a href="key-personnel.php">Key Personnel</a></li>
+                        </ul>
+
+                    </li>
+                    <li class="contact"><a href="contact.php">CONTACT</a></li>
+
+                    <!-- END OF mainMenu --></ul>
+                <div class="clearfix"></div>
+            </nav>
+            <div id="underBar">
+                <ul class="social">
+                    <li>Connect with us</li>
+                    <li><a target="_blank" href=""><img src="images/linkedin-icon.png"></a></li>
+                    <li><a target="_blank" href=""><img src="images/twitter-icon.png"></a></li>
+                    <li><a target="_blank" href=""><img src="images/facebook-icon.png"></a></li>
+                </ul>
+
+                <p>Your Commercial Real Estate Lending Expert Since 1984</p>
+                <div class="clearfix"></div>
+            </div>
+            <div id="contentWrapper">
+                {% block pageHeader %}
+                <h1>MS&amp;F Management Console</h1>
+                {% endblock %}
+                {% block content %}
+                {% endblock %}
+                <div class="clearfix"></div>
+            </div>
+
+            <div id="footerWrapper">
+                <div id="footer">
+                    <a id="logoFooter" href="index.php"><span><!-- image replacement --></span></a>
+
+                    <form>
+                        <input type="image" id="submitBtn" value="submit" alt="submitButton" src="images/arrow-blue.png"/>
+                        <input type="text" placeholder="enter email for company news" class="emailFooter"/>
+                    </form>
+
+                    <span class="vertDivider"></span>
+                    <ul class="socialFooter">
+                        <li><a target="_blank" href=""><img src="images/linkedin-icon-blue.png"></a></li>
+                        <li><a target="_blank" href=""><img src="images/twitter-icon-blue.png"></a></li>
+                        <li><a target="_blank" href=""><img src="images/facebook-icon-blue.png"></a></li>
+                    </ul>
+
+                    <span class="vertDivider"></span>
+
+                    <p>(614) 396-5970</p>
+                </div>
+
+                <div id="underFooter">
+                    <ul class="companyInfo">
+                        <li>Morris, Smith &#38; Feyh, Incorporated</li>
+                        <li>1900 Polaris Parkway, Suite 425</li>
+                        <li>Columbus, Ohio 43240</li>
+                    </ul>
+                    <p>Copyright © Morris, Smith & Feyh, Incorporated</p>
+                </div>
+            </div>
+        </div>
+        <script src="//code.jquery.com/jquery-1.7.1.min.js"></script>
+    </body>
+</html>

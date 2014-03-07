@@ -6,5 +6,8 @@ RewriteEngine On
 #
 # RewriteBase /
 
+# Handle relative references to static resources (css/, images/, js/)
+RewriteRule (/(css|images|js)/.*) ../$1 [QSA,L] # Remove parent directory reference when root
+
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^ index.php [QSA,L]

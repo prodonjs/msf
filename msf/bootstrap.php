@@ -1,4 +1,5 @@
 <?php
+/* Autoloader for composer packages */
 require_once('vendor/autoload.php');
 
 /**
@@ -22,6 +23,11 @@ define('DS', DIRECTORY_SEPARATOR);
 define('PACKAGE_ROOT', __DIR__);
 
 /**
+ * Root for logs
+ */
+define('LOGS_ROOT', PACKAGE_ROOT . DS . 'logs');
+
+/**
  * MSF package should be a subfolder of the site's webroot
  */
 define('WEBROOT', dirname(__DIR__));
@@ -41,3 +47,7 @@ define('TEST_DATA_PATH', PACKAGE_ROOT . DS . 'tests' . DS . 'files');
  */
 define('IMAGES_PATH', WEBROOT . DS . 'images');
 
+/**
+ * Twig template location
+ */
+define('TEMPLATES_PATH', WEBROOT);

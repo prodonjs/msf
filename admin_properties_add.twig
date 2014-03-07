@@ -1,0 +1,26 @@
+{% extends "index.twig" %}
+{% block pageHeader %}
+<h1>Add a New Property</h1>
+{% endblock %}
+
+{% block content %}
+<form id="properties-add-form" action="add" method="post" enctype="multipart/form-data">
+    <label>Name</label>
+    <input type="text" name="property[name]" placeholder="Name" required /><br>
+    <label>City</label>
+    <input type="text" name="property[city]" placeholder="City" required /><br>
+    <label>State</label>
+    <input type="text" name="property[state]" placeholder="State" maxlength="2" required /><br>
+    <label>Type</label>
+    <input type="text" name="property[type]" placeholder="Type" required /><br>
+    <label>Amount Financed</label>
+    <input type="number" name="property[amountFinanced]" placeholder="Amount Financed" required /><br>
+    <label>Closing Date</label>
+    <input type="date" name="property[closingDate]" placeholder="Closing Date" required /><br>
+    <label>Description</label>
+    <textarea name="property[description]"></textarea><br>
+    <label>Property Image</label>
+    <input type="file" name="property[image]" accept="image/*" />
+    <input type="submit" class="btn btn-primary btn-lg" value="Confirm">
+</form>
+{% endblock %}
