@@ -138,12 +138,11 @@ class Image {
 
     /**
      * Handle a standard POST form upload
-     * @param string $formField Form field containing the image
+     * @param string $fileData $_FILES array containing the image information
      * @param string $imagesPath Path where image should be saved
      * @return a single Image object
      */
-    public static function CreateFromUpload($formField, $imagesPath) {
-        $fileData = $_FILES[$formField];
+    public static function CreateFromUpload($fileData, $imagesPath) {
         if($fileData['error'] !== UPLOAD_ERR_OK) {
             throw new \RuntimeException("{$fileData['name']} failed to upload");
         }

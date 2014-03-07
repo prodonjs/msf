@@ -178,7 +178,10 @@ class Property {
     public function toData() {
         $data = array();
         foreach($this->_dataFields as $f) {
-            if($f === 'image' && $this->{$f}) {
+            if(!$this->{$f}) {
+                continue;
+            }
+            if($f === 'image' && $this->{$f} instanceof \msf\models\Image) {
                 $data[$f] = $this->image->fullPath;
             }
             else {
@@ -196,6 +199,9 @@ class Property {
         foreach($data as $f => $value) {
             if($f !== 'image') {
                 $this->{$f} = $value;
+            }
+            else {
+                $this->image = new \msf\models\Image($value);
             }
         }
     } // end _toData()

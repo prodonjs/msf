@@ -43,32 +43,41 @@ $app->group('/admin/properties', function() use ($app) {
             'pageTitle' => 'Properties Management Console',
             'properties' => $properties
         ));
-    });
+    })->name('admin_properties_index');
     /* Create new Property form */
     $app->get('/add', function() use ($app) {
         $app->log->info("Properties - Create New");
         $app->render('admin_properties_add.twig', array(
             'pageTitle' => 'Add a New Property'
         ));
-    });
-    /* Create new Property Post */
+    })->name('admin_properties_add');
+    /* Create new Property post-handler */
     $app->post('/add', function() use ($app) {
         $data = $app->request->post();
         $property = new \msf\models\Property($app->config('datasource'));
-        if(isset($data['property']['image'])) {
+        
+        if(isset($_FILES['property']['image'])) {
             try {
-                $image = \msf\models\Image::CreateFromUpload('property[image]', IMAGES_PATH);
-                print_r($image);
+                $image = \msf\models\Image::CreateFromUpload(
+                  $_FILES['property']['image'], IMAGES_PATH
+                );
+                $image->generateThumbnail(
+                  \msf\models\Property::THUMBNAIL_WIDTH, 
+                  \msf\models\Property::THUMBNAIL_HEIGHT
+                );
                 $property->image = $image;
             }
             catch (\RuntimeException $e) {
                 $app->log->error('Property Add - Failed to upload image');
                 $app->log->error($e->getMessage());
+                $app->response->redirect($app->urlFor('admin_properties_add'));
             }
         }
         $property->fromData($data['property']);
         if($property->save()) {
-            $app->log->info("Property created - ID: {$property->id}");        }
+            $app->log->info("Property created - ID: {$property->id}");
+            $app->response->redirect($app->urlFor('admin_properties_index'));
+        }
         else {
             $app->log->error("Unable to save Property");
         }
