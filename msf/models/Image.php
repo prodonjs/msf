@@ -15,6 +15,12 @@ class Image {
     public $name;
 
     /**
+     * Basename of thumbnail image file
+     * @var string
+     */
+    public $thumbnailName;
+
+    /**
      * Fully qualified image path
      * @var string
      */
@@ -46,14 +52,12 @@ class Image {
         if(!file_exists($filePath)) {
             throw new \RuntimeException("{$filePath} does not exist");
         }
-        if(!self::IsValidImage($filePath)) {
-            throw new \RuntimeException("{$filePath} must be a valid JPG or PNG image");
-        }
         $this->fullPath = $filePath;
         $this->name = basename($this->fullPath);
         $this->sizeInBytes = filesize($this->fullPath);
         $this->type = substr($this->fullPath, -3);
         $this->thumbnailPath = dirname($this->fullPath) . DS . self::THUMBNAIL_PREFIX . $this->name;
+        $this->thumbnailName = basename($this->thumbnailPath);
     } // end __construct
 
     /**
@@ -128,30 +132,39 @@ class Image {
     }
 
     /**
-     * Validates image type based on the file extension
+     * Validates image using extension and mime type
      * @param string $filePath
      * @return boolean
      */
-    public static function IsValidImage($filePath) {
-        return in_array(substr($filePath, -3), array('jpg', 'png'));
+    public static function IsValidImage($extension, $mimeType) {
+        $validExtensions = array('jpg', 'png');
+        $validMimeTypes = array('image/jpeg', 'image/pjpeg', 'image/png');
+
+        return in_array($extension, $validExtensions) && in_array($mimeType, $validMimeTypes);
     }
 
     /**
-     * Handle a standard POST form upload
-     * @param string $fileData $_FILES array containing the image information
-     * @param string $imagesPath Path where image should be saved
+     * Handle a standard POST form upload for a single image
+     * @param string $name Uploaded file name from form
+     * @param string $path Path where image should be saved
+     * @param int $thumbnailWidth Width of thumbnail image
+     * @param int $thumbnailHeight Height of thumbnail image
      * @return a single Image object
      */
-    public static function CreateFromUpload($fileData, $imagesPath) {
+    public static function CreateFromUpload($name, $path, $thumbnailWidth, $thumbnailHeight) {
+        $fileData = $_FILES[$name];
         if($fileData['error'] !== UPLOAD_ERR_OK) {
             throw new \RuntimeException("{$fileData['name']} failed to upload");
         }
 
         // Check for valid image types (PNG or JPG)
         $fileData['name'] = str_replace(' ', '_', strtolower($fileData['name']));
-        $destination = $imagesPath . DS . $fileData['name'];
-        if(self::IsValidImage($destination) && move_uploaded_file($fileData['tmp_name'], $destination)) {
-            $image = new Image($fileData['name']);
+        $destination = $path . DS . $fileData['name'];
+        $extension = substr($destination, -3);
+        $mimeType = $fileData['type'];
+        if(self::IsValidImage($extension, $mimeType) && move_uploaded_file($fileData['tmp_name'], $destination)) {
+            $image = new Image($destination);
+            $image->generateThumbnail($thumbnailWidth, $thumbnailHeight);
             return $image;
         }
         else {

@@ -165,6 +165,10 @@ class Property {
      */
     public function delete() {
         if($this->id) {
+            if($this->image instanceof \msf\models\Image) {
+                unlink($this->image->fullPath);
+                unlink($this->image->thumbnailPath);
+            }
             return $this->_dataSource->delete(self::MODEL_NAME, $this->id);
         }
         return false;

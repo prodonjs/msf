@@ -4,6 +4,7 @@
 {% endblock %}
 
 {% block content %}
+<a href="{{ indexUrl }}" >Back to Properties list</a>
 <form id="properties-add-form" action="add" method="post" enctype="multipart/form-data">
     <label>Name</label>
     <input type="text" name="property[name]" placeholder="Name" required /><br>
@@ -20,7 +21,7 @@
     <label>Description</label>
     <textarea name="property[description]"></textarea><br>
     <label>Property Image</label>
-    <input type="file" name="property[image]" accept="image/*" />
+    <input type="file" name="image" accept="image/*" />
     <input type="submit" value="Add Property">
 </form>
 {% endblock %}

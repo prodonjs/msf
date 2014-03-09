@@ -1,0 +1,30 @@
+{% extends "index.twig" %}
+{% block pageHeader %}
+<h1>Edit Property - {{ property.name }}</h1>
+{% endblock %}
+
+{% block content %}
+<a href="{{ indexUrl }}" >Back to Properties list</a>
+<form id="properties-edit-form" action="{{ editUrl }}" method="post" enctype="multipart/form-data">
+    <input type="hidden" name="_METHOD" value="PUT" />
+    <input type="hidden" name="property[id]" value="{{ property.id }}" />
+    <label>Name</label>
+    <input type="text" name="property[name]" value="{{ property.name }}" required /><br>
+    <label>City</label>
+    <input type="text" name="property[city]" value="{{ property.city }}" required /><br>
+    <label>State</label>
+    <input type="text" name="property[state]" value="{{ property.state }}" maxlength="2" required /><br>
+    <label>Type</label>
+    <input type="text" name="property[type]" value="{{ property.type }}" required /><br>
+    <label>Amount Financed</label>
+    <input type="number" name="property[amountFinanced]" value="{{ property.amountFinanced }}" required /><br>
+    <label>Closing Date</label>
+    <input type="date" name="property[closingDate]" value="{{ property.closingDate }}" required /><br>
+    <label>Description</label>
+    <textarea name="property[description]">{{ property.description }}</textarea><br>
+    <img src="{{ imagesPath ~ "/" ~ property.image.name }}" alt="{{ p.name }} image" /><br>
+    <label>Replace Image</label>
+    <input type="file" name="image" accept="image/*" />
+    <input type="submit" value="Save Property">
+</form>
+{% endblock %}
