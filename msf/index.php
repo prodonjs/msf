@@ -2,10 +2,15 @@
 require_once 'bootstrap.php';
 
 // Prepare app
+$dataSource = new \msf\models\FileDataSource(FILE_DATA_SOURCE_PATH);
+$imagesUploadPath = $dataSource->getSubTypePath(\msf\models\FileDataSource::IMAGES);
+$imagesPath = str_replace(SITE_ROOT, '', $imagesUploadPath);
+
 $app = new \Slim\Slim(array(
     'templates.path' => TEMPLATES_PATH,
-    'datasource' => new \msf\models\FileDataSource(FILE_DATA_SOURCE_PATH),
-    'imagesPath' => IMAGES_SRC
+    'datasource' => $dataSource,
+    'imagesUploadPath' => $imagesUploadPath,
+    'imagesPath' => $imagesPath
 ));
 
 // Create monolog logger and store logger in container as singleton
@@ -18,8 +23,24 @@ $app->container->singleton('log', function () {
     return $log;
 });
 
-/* Use Basic Authentication Middleware */
-#$app->add(new \utility\HttpBasicAuth('Powerlane Integration System'));
+/* Protect admin routes via Basic Auth */
+$app->add(new \msf\util\HttpBasicAuth(MSF_ADMIN_USER, MSF_ADMIN_PASS,
+    'MS&F Administrators Portal', '#^/admin/#'
+));
+/* Add Image uploading */
+$app->add(new \msf\util\ImageUploader());
+/* Add SessionCookie for Flash messages */
+$app->add(new \Slim\Middleware\SessionCookie(array(
+    'expires' => '20 minutes',
+    'path' => '/',
+    'domain' => null,
+    'secure' => false,
+    'httponly' => false,
+    'name' => 'msf',
+    'secret' => 'f HiN!~HyD9C~~>4C.NN-L#]1,5k^=P=!,cL0XlzZ1F+-8Q<]rryA&}|TdRvr^ <',
+    'cipher' => MCRYPT_RIJNDAEL_256,
+    'cipher_mode' => MCRYPT_MODE_CBC
+)));
 
 // Prepare view
 $app->view(new \Slim\Views\Twig());
@@ -44,7 +65,8 @@ $app->group('/admin/properties', function() use ($app) {
             'pageTitle' => 'Properties Management Console',
             'properties' => $properties,
             'imagesPath' => $app->config('imagesPath'),
-            'addUrl' => $app->urlFor('admin_properties_add')
+            'addUrl' => $app->urlFor('admin_properties_add'),
+            'editUrl' => $app->urlFor('admin_properties_edit')
         ));
     })->name('admin_properties_index');
     /* Create new Property form */
@@ -59,28 +81,23 @@ $app->group('/admin/properties', function() use ($app) {
     $app->post('/add', function() use ($app) {
         $data = $app->request->post();
         $property = new \msf\models\Property($app->config('datasource'));
-        if(!empty($_FILES['image'])) {
-            try {
-                $image = \msf\models\Image::CreateFromUpload(
-                  'image', IMAGES_PATH,
-                  \msf\models\Property::THUMBNAIL_WIDTH,
-                  \msf\models\Property::THUMBNAIL_HEIGHT
-                );
-                $property->image = $image;
-            }
-            catch (\RuntimeException $e) {
-                $app->log->error("Property Add - Failed to upload image {$e->getMessage()}");
-                $app->response->redirect($app->urlFor('admin_properties_add'));
-            }
-        }
-        $property->fromData($data['property']);
-        if($property->save()) {
-            $app->log->info("Property created - ID: {$property->id}");
+        if(!isset($app->image)) {
+            $message = "Unable to upload image for Property";
+            $app->log->error($message);
+            $app->flash('message', $message);
             $app->response->redirect($app->urlFor('admin_properties_index'));
         }
-        else {
-            $app->log->error("Unable to save Property");
+        $property->fromData($data['property']);
+        $property->image = $app->image;
+        if(!$property->save()) {
+            $message = "Unable to save Property";
+            $app->flash('message', $message);
+            $app->log->error($message);
         }
+        $message = "Property created";
+        $app->flash('message', $message);
+        $app->log->info("{$message} - ID: {$property->id}");
+        $app->response->redirect($app->urlFor('admin_properties_edit', array('id' => $property->id)));
     });
     /* Edit Property form */
     $app->get('/edit/:id', function($id) use ($app) {
@@ -95,8 +112,10 @@ $app->group('/admin/properties', function() use ($app) {
                 'imagesPath' => $app->config('imagesPath'),
             ));
         }
-        catch (RuntimeException $e) {
-            $app->log->error("Property does not exist - ID: {$id}");
+        catch (\RuntimeException $e) {
+            $message = "Property does not exist - ID: {$id}";
+            $app->flash('message', $message);
+            $app->log->error($message);
             $app->response->redirect($app->urlFor('admin_properties_index'));
         }
     })->name('admin_properties_edit');
@@ -105,32 +124,37 @@ $app->group('/admin/properties', function() use ($app) {
         try {
             $property = \msf\models\Property::Get($id, $app->config('datasource'));
         }
-        catch (RuntimeException $e) {
-            $app->log->error("Property does not exist - ID: {$id}");
+        catch (\RuntimeException $e) {
+            $message = "Unable to save Property";
+            $app->flash('message', $message);
+            $app->log->error($message);
             $app->response->redirect($app->urlFor('admin_properties_index'));
         }
         $data = $app->request->put();
-        if(!empty($_FILES['image'])) {
-            try {
-                $image = \msf\models\Image::CreateFromUpload(
-                  'image', IMAGES_PATH,
-                  \msf\models\Property::THUMBNAIL_WIDTH,
-                  \msf\models\Property::THUMBNAIL_HEIGHT
-                );
-                $property->image = $image;
-            }
-            catch (\RuntimeException $e) {
-                $app->log->error("Property Add - Failed to upload image {$e->getMessage()}");
-                $app->response->redirect($app->urlFor('admin_properties_add'));
-            }
-        }
         $property->fromData($data['property']);
-        if($property->save()) {
-            $app->log->info("Property saved - ID: {$property->id}");
+        /* Check for image replacement */
+        if(isset($app->image)) {
+            $property->image = $app->image;
+            $app->log->info("Property Image Replaced with {$property->image->name} - ID: {$property->id}");
         }
-        else {
-            $app->log->error("Unable to save Property");
+        /* Check for image crop */
+        else if (!empty($data['image']['dimensions'])) {
+            $dimensions = explode(',', $data['image']['dimensions']);
+            $property->image->cropToDimensions($dimensions[0], $dimensions[1], $dimensions[2], $dimensions[3]);
+            $property->image->generateThumbnail(\msf\models\Property::THUMBNAIL_WIDTH, \msf\models\Property::THUMBNAIL_HEIGHT);
+            $app->log->info("Property Image Cropped - ID: {$property->id}");
         }
+
+        if(!$property->save()) {
+            $message = "Unable to save Property";
+            $app->flash('message', $message);
+            $app->log->error($message);
+            $app->response->redirect($app->urlFor('admin_properties_index'));
+        }
+
+        $message = "Property Saved";
+        $app->flash('message', $message);
+        $app->log->info("{$message} - ID: {$property->id}");
         $app->response->redirect($app->urlFor('admin_properties_edit', array('id' => $id)));
     });
     /* Delete a property */
@@ -144,12 +168,24 @@ $app->group('/admin/properties', function() use ($app) {
                 $app->log->error("Unable to delete Property - ID: {$id}");
             }
         }
-        catch (RuntimeException $e) {
+        catch (\RuntimeException $e) {
             $app->log->error("Property does not exist - ID: {$id}");
         }
         $app->response->redirect($app->urlFor('admin_properties_index'));
     });
 });
+
+/**
+ * Recent Property financings
+ */
+$app->get('/properties/recent', function() use ($app) {
+    $properties = \msf\models\Property::FindAll($app->config('datasource'), 3, 'created', 'DESC');
+    $app->log->info("Properties - Recent Financings");
+    $app->render('properties_recent.twig', array(
+        'properties' => $properties,
+        'imagesPath' => $app->config('imagesPath')
+    ));
+})->name('recent_financings');
 
 // Run app
 $app->run();

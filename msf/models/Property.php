@@ -186,7 +186,7 @@ class Property {
                 continue;
             }
             if($f === 'image' && $this->{$f} instanceof \msf\models\Image) {
-                $data[$f] = $this->image->fullPath;
+                $data[$f] = $this->image->name;
             }
             else {
                 $data[$f] = $this->{$f};
@@ -205,7 +205,9 @@ class Property {
                 $this->{$f} = $value;
             }
             else {
-                $this->image = new \msf\models\Image($value);
+                /* Instantiate the Image using its full path */
+                $imagePath = $this->_dataSource->getSubTypePath(FileDataSource::IMAGES) . DIRECTORY_SEPARATOR;
+                $this->image = new \msf\models\Image($imagePath . $value);
             }
         }
     } // end _toData()

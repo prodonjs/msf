@@ -8,6 +8,8 @@
         <link href="/css/content.css" rel="stylesheet" type="text/css"/>
         <link href="/css/form.css" rel="stylesheet" type="text/css"/>
         <link href="/css/reset.css" rel="stylesheet" type="text/css"/>
+        {% block cssIncludes %}
+        {% endblock %}
     </head>
 
     <body class="homeBody">
@@ -18,20 +20,20 @@
                     <a href=""><img src="/images/arrow.png"/>CLIENT LOGIN</a>
                 </div>
 
-                <a id="logo" href="index.php">MS&F Real Estate Capital<span><!-- image replacement --></span></a>
+                <a id="logo" href="/index.php">MS&F Real Estate Capital<span><!-- image replacement --></span></a>
             </header>
             <nav>
                 <ul class="mainNav">
-                    <li class="home"><a href="index.php">HOME</a></li>
-                    <li class="loan-production"><a href="loan-production.php">LOAN PRODUCTION</a></li>
-                    <li class="recent-financings"><a href="recent-financings.php">RECENT FINANCINGS</a></li>
-                    <li class="about"><a href="about.php">ABOUT</a>
+                    <li class="home"><a href="/index.php">HOME</a></li>
+                    <li class="loan-production"><a href="/loan-production.php">LOAN PRODUCTION</a></li>
+                    <li class="recent-financings"><a href="/recent-financings.php">RECENT FINANCINGS</a></li>
+                    <li class="about"><a href="/about.php">ABOUT</a>
                         <ul class="subMenu">
                             <li class="key-personnel"><a href="key-personnel.php">Key Personnel</a></li>
                         </ul>
 
                     </li>
-                    <li class="contact"><a href="contact.php">CONTACT</a></li>
+                    <li class="contact"><a href="/contact.php">CONTACT</a></li>
 
                     <!-- END OF mainMenu --></ul>
                 <div class="clearfix"></div>
@@ -51,6 +53,9 @@
                 {% block pageHeader %}
                 <h1>MS&amp;F Management Console</h1>
                 {% endblock %}
+                <div class="flash-message">
+                    <p>{{ flash.message }}</p>
+                </div>
                 {% block content %}
                 {% endblock %}
                 <div class="clearfix"></div>
@@ -58,7 +63,7 @@
 
             <div id="footerWrapper">
                 <div id="footer">
-                    <a id="logoFooter" href="index.php"><span><!-- image replacement --></span></a>
+                    <a id="logoFooter" href="/index.php"><span><!-- image replacement --></span></a>
 
                     <form>
                         <input type="image" id="submitBtn" value="submit" alt="submitButton" src="/images/arrow-blue.png"/>
@@ -88,5 +93,7 @@
             </div>
         </div>
         <script src="//code.jquery.com/jquery-1.7.1.min.js"></script>
+        {% block jsIncludes %}
+        {% endblock %}
     </body>
 </html>

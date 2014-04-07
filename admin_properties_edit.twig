@@ -1,4 +1,8 @@
 {% extends "index.twig" %}
+{% block cssIncludes %}
+<link rel="stylesheet" href="/css/jquery.Jcrop.min.css" type="text/css" />
+{% endblock %}
+
 {% block pageHeader %}
 <h1>Edit Property - {{ property.name }}</h1>
 {% endblock %}
@@ -22,9 +26,38 @@
     <input type="date" name="property[closingDate]" value="{{ property.closingDate }}" required /><br>
     <label>Description</label>
     <textarea name="property[description]">{{ property.description }}</textarea><br>
-    <img src="{{ imagesPath ~ "/" ~ property.image.name }}" alt="{{ p.name }} image" /><br>
+    <p>
+        Click and Drag to Crop the Image
+        <button type="button" id="clear-crop">Clear Crop</button>
+    </p>
+    <input type="hidden" name="image[dimensions]"/>
+    <img id="property-image" src="{{ imagesPath ~ "/" ~ property.image.name }}" alt="{{ p.name }} image" /><br>
     <label>Replace Image</label>
     <input type="file" name="image" accept="image/*" />
     <input type="submit" value="Save Property">
 </form>
+{% endblock %}
+
+{% block jsIncludes %}
+<script src="/js/jquery.Jcrop.min.js"></script>
+<script src="/js/jquery.color.js"></script>
+<script>
+    $(document).ready(function() {
+        var jcrop_api;
+        $('#property-image').Jcrop({
+            aspectRatio: 8 / 6,
+            onSelect: function(c) {
+                var dimensions = [Math.floor(c.x), Math.floor(c.y), Math.floor(c.w), Math.floor(c.h)];
+                $('input[name="image[dimensions]"]').val(dimensions.join(','));
+            }
+        }, function() {
+            jcrop_api = this;
+        });
+
+        $('#clear-crop').on('click', function() {
+            jcrop_api.release();
+            $('input[name="image[dimensions]"]').val('');
+        });
+    });
+</script>
 {% endblock %}

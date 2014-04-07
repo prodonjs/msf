@@ -20,7 +20,7 @@
         <strong>Financed for: </strong>{{ p.amountFinanced|number_format }}
     </p>
     <img src="{{ imagesPath ~ "/" ~ p.image.thumbnailName }}" alt="{{ p.name }} thumbnail" /><br>
-    <a href="edit/{{ p.id }}">Edit</a>
+    <a href="{{ editUrl | replace({":id": p.id}) }}">Edit</a>
     <form method="post" action="delete/{{ p.id }}">
         <input type="hidden" name="_METHOD" value="DELETE"/>
         <input type="submit" value="Delete"/>

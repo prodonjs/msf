@@ -2,6 +2,8 @@
 namespace msf\models;
 
 class FileDataSource {
+    const IMAGES = 'IMAGES';
+    const DOCUMENTS = 'DOCUMENTS';
 
     /**
      * Base path for files
@@ -14,6 +16,15 @@ class FileDataSource {
      * @var string
      */
     private $_extension;
+
+    /**
+     * Array of subdirectories by object-type
+     * @var array
+     */
+    private $_subTypes = array(
+        self::IMAGES => 'images',
+        self::DOCUMENTS => 'documents'
+    );
 
     public function __construct($basePath, $extension='json') {
         $this->_basePath = $basePath;
@@ -28,7 +39,7 @@ class FileDataSource {
      * @return string
      */
     public function getFileName($modelName, $id) {
-        $fileName = $this->_basePath . DIRECTORY_SEPARATOR;
+        $fileName = $this->_basePath . DS;
         $fileName .= "{$modelName}_{$id}.{$this->_extension}";
         return $fileName;
     } // end getFileName()
@@ -83,7 +94,7 @@ class FileDataSource {
      * @return array
      */
     public function readAll($modelName, $limit=0, $orderBy='', $direction='ASC') {
-        $filePattern = $this->_basePath . DIRECTORY_SEPARATOR . $modelName . '*' . $this->_extension;
+        $filePattern = $this->_basePath . DS . $modelName . '*' . $this->_extension;
         $data = array();
         foreach(glob($filePattern) as $f) {
             $jsonData = @file_get_contents($f);
@@ -145,4 +156,18 @@ class FileDataSource {
 
         return $data;
     } // end sortData()
+
+    /**
+     * Returns the fully qualified path for the subtype of data
+     * @param string $type
+     * @return string
+     */
+    public function getSubTypePath($type) {
+        if(isset($this->_subTypes[$type])) {
+            return $this->_basePath . DS . $this->_subTypes[$type];
+        }
+        else {
+            return $this->_basePath . DS . str_replace(' ', '', strtolower($type));
+        }
+    } // end getSubTypePath()
 } // end class FileDataSource

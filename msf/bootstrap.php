@@ -43,25 +43,13 @@ define('FILE_DATA_SOURCE_PATH', PACKAGE_ROOT . DS . 'data');
 define('TEST_DATA_PATH', PACKAGE_ROOT . DS . 'tests' . DS . 'files');
 
 /**
- * Default location for image data storage
- */
-define('IMAGES_PATH', FILE_DATA_SOURCE_PATH . DS . 'images');
-
-/**
  * Twig template location
  */
 define('TEMPLATES_PATH', SITE_ROOT);
 
 /**
- * Provide IMAGE_SRC as a constant, fully-qualified path from the
- * site's root to the IMAGES_PATH datastore
+ * Administrator credentials
  */
-$siteRoot = empty($_SERVER['DOCUMENT_ROOT']) ? SITE_ROOT : realpath($_SERVER['DOCUMENT_ROOT']);
-/* MS&F main site is running in a subdirectory and not as VirtualHost */
-if(SITE_ROOT !== $siteRoot) {
-    $imagesSource = substr(IMAGES_PATH, strlen($siteRoot));
-}
-else {
-    $imagesSource = substr(IMAGES_PATH, strlen(SITE_ROOT));
-}
-define('IMAGES_SRC', str_replace(DS, '/', $imagesSource));
+define('MSF_ADMIN_USER', 'msf_admin');
+define('MSF_ADMIN_PASS', 'msf_P@ss');
+
