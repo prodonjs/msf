@@ -20,12 +20,39 @@
 		   
 			   <br/>
 			   <span class="smaller">
-				   Each and every loan we deal with is different and requires a customized approach. Our wide ranging services include expertise and strong relations with numerous financial institutions, various loan program, over a dozen property types, and loan sizes for any size development.
-			   </span>   
+				   Borrowers come to MS&F with complex opportunities in complex sectors. As borrowers and owners ourselves with over 150 combined years of commercial real estate investment experience, we combine an owner’s perspective with awareness – and mastery -- of various debt and equity options and features, from federally insured debt, to mezzanine and equity capital, to plain vanilla fixed-rate insurance company, CMBS and bank loans. <br/><br/>Since every loan we handle requires a customized approach, we have developed strong relationships with numerous financial institutions and various alternative debt and equity sources, and we have a complete understanding of the legal and technical nuances of each property type. 	
+				   <br/><br/>
+				   Borrowers who work with us know we will identify and address issues before they become problems, and that our breadth of experience means we will evaluate every creative option to find the solution that is best for them. 
+				   
+				   		   </span>   
 			   
 		   </h1>
 		   
-
+			<div class="loanFloat">	
+				<h2><span class="strong">PROPERTY TYPES:</span>
+				<br/>
+				<br/> MS&F has the ability to finance most conventional commercial property types, which include:</h2>
+				
+					<ul>
+						<li>Multi-family</li>
+						<li>Medical Office </li>
+						<li>Office</li>
+						<li>Hotels</li>
+						<li>Office/Warehouse</li>
+						<li>Assisted Living</li>
+						<li>Industrial</li>
+					</ul>
+					<ul>	
+						<li>Low Income Housing</li>
+						<li>Anchored Retail</li>
+						<li>Mini-storage</li>
+						<li>Strip Center</li>
+						<li>Owner Occupied</li>
+						<li>Credit Retail</li>
+						<li>Special Use</li>
+					</ul>
+			
+			</div>
 		   <div class="loanFloat">
 				<h2><span class="strong">LENDING INSTITUTIONS</span>
 				<br/>
@@ -62,31 +89,7 @@
 					</ul>
 			</div>	
 				
-			<div class="loanFloat">	
-				<h2><span class="strong">PROPERTY TYPES:</span>
-				<br/>
-				<br/> MS&F has the ability to finance most conventional commercial property types, which include:</h2>
-				
-					<ul>
-						<li>Multi-family</li>
-						<li>Medical Office </li>
-						<li>Office</li>
-						<li>Hotels</li>
-						<li>Office/Warehouse</li>
-						<li>Assisted Living</li>
-						<li>Industrial</li>
-					</ul>
-					<ul>	
-						<li>Low Income Housing</li>
-						<li>Anchored Retail</li>
-						<li>Mini-storage</li>
-						<li>Strip Center</li>
-						<li>Owner Occupied</li>
-						<li>Credit Retail</li>
-						<li>Special Use</li>
-					</ul>
-			
-			</div>
+
 			<div class="loanFloat">	
 				<h2><span class="strong">LOAN SIZES:</span>
 				<br/>

@@ -29,7 +29,7 @@
 /*************HOME****************/
 #contentWrapper .homeH1{
 	font-size: 10pt;
-	letter-spacing: 1px;
+
 	line-height: 15pt;
 }
 
@@ -216,31 +216,31 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#414095', end
 
 /************KEY PERSONNEL*************/
 
-.bioLeft{
+.keyBody #contentWrapper div{
+	margin-bottom: 50px;
+	overflow: hidden;
+}
+
+.keyBody #contentWrapper div h2{
 	float: left;
+	font-weight: 800;
 	clear: both;
 }
 
-.bioLeft h2{
-	
+.keyBody #contentWrapper div img{
+	float: right;
+	margin-right: 50px;
 }
 
-.bioLeft p, .bioRight p{
+.keyBody #contentWrapper div p{
+	float: left;
 	width: 50%;
 	font-size: 10pt;
 	text-align: justify;
 	margin: 10px 0 10px 0;
-}
-
-.bioRight{
-	float: right;
 	clear: both;
-}
 
-bioRight p{
-	float: right;
 }
-
 
 /************LOAN PRODUCTION*************/
 

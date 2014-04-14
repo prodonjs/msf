@@ -47,21 +47,13 @@
 
         <?php include_once('footer.php'); ?>
 
-
-
-
-
         <script class="secret-source">
-            $(document).ready(function($) {
-                $.get('/msf/properties/recent', function(data) {
-                    $('#recent-financings').html(data);
-                    $('#banner-fade').bjqs({
-                        height      : 250,
-                        width       : 690,
-                        responsive  : false
-                    });
+            function configureSlideshow() {
+                $('#banner-fade').bjqs({
+                    height      : 250,
+                    width       : 690,
+                    responsive  : false
                 });
-
                 /* Extend the jQuery.show() function to trigger an event */
                 var _showFn = $.fn.show;
                 $.fn.show = function(a, b, c) {
@@ -78,6 +70,14 @@
                     var thumbId = $(this).attr('id') + '-thumb';
                     $('div.onDeck a').children().removeClass('highlighted');
                     $('div a#' + thumbId).children().addClass('highlighted');
+                });
+            }
+
+            /* jQuery document ready event */
+            $(document).ready(function($) {
+                $.get('/msf/properties/recent', function(data) {
+                    $('#recent-financings').html(data);
+                    configureSlideshow();
                 });
             });
         </script>

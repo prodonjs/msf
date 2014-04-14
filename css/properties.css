@@ -1,0 +1,76 @@
+#contentWrapper #propertyLinks{
+	list-style-type: none;
+	display: inline;
+	margin-bottom: 25px;
+	clear: left;
+}
+
+#contentWrapper #propertyLinks li{
+	display: inline;
+	margin: 0 5px 0 5px; 
+}
+
+.listing{
+	margin: 10px;
+	width: 300px;
+	font-size: 11pt;
+	font-weight: 400;
+	float: left;
+
+}
+
+.listing p{
+	line-height: 14pt;
+}
+
+.listing .name{
+	font-size: 14pt;
+	font-weight: 800;
+	margin-top: 10px;
+}
+
+.listing .city, .listing .state{
+	display: inline;
+}
+
+.moreDetails{
+	position: relative;
+}
+
+.moreDetails span{
+	position: absolute;
+	top:0px;
+	left: 0px;	
+	background-image: url(images/moreInfobtn.png);
+	width: 107px;
+	height: 35px;
+}
+
+.propertiesPop{
+	padding: 10px;
+	float: left;
+	width: 800px;
+	border: black 1px dashed;	
+	font-size: 11pt;
+	font-weight: 400;
+}
+
+		.propertiesPop img{
+			margin-left: 90px;
+		}
+		
+		.propertiesPop p{
+			padding-left: 90px;
+			margin: 5px 0 5px 0;
+		}
+		
+		.propertiesPop .name{
+			font-size: 14pt;
+			font-weight: 800;
+			margin-top: 10px;	
+			
+		}
+		
+		.propertiesPop .description span{
+			font-weight: 800;
+		}
