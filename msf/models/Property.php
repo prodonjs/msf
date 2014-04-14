@@ -10,10 +10,10 @@ class Property {
     /**
      * Preferred dimensions for property Image
      */
-    const PREFERRED_IMG_WIDTH = 800;
-    const PREFERRED_IMG_HEIGHT = 600;
-    const THUMBNAIL_WIDTH = 150;
-    const THUMBNAIL_HEIGHT = 113;
+    const PREFERRED_IMG_WIDTH = 600;
+    const PREFERRED_IMG_HEIGHT = 320;
+    const THUMBNAIL_WIDTH = 300;
+    const THUMBNAIL_HEIGHT = 160;
 
     /**
      * Identifer
