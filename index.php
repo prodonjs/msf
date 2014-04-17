@@ -75,8 +75,10 @@
             /* jQuery document ready event */
             $(document).ready(function($) {
                 $.get('/msf/properties/recent/3', function(data) {
-                    $('#recent-financings').html(data);
-                    configureSlideshow();
+                    if (data) {
+                        $('#recent-financings').html(data);
+                        configureSlideshow();
+                    }
                 });
             });
         </script>
