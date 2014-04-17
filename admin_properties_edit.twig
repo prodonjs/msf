@@ -31,7 +31,7 @@
         <button type="button" id="clear-crop">Clear Crop</button>
     </p>
     <input type="hidden" name="image[dimensions]"/>
-    <img id="property-image" src="{{ imagesPath ~ "/" ~ property.image.name }}" alt="{{ p.name }} image" /><br>
+    <img id="property-image" src="{{ imagesPath ~ "/" ~ property.image.name }}?no-cache=true" alt="{{ p.name }} image" /><br>
     <label>Replace Image</label>
     <input type="file" name="image" accept="image/*" />
     <input type="submit" value="Save Property">
@@ -45,7 +45,7 @@
     $(document).ready(function() {
         var jcrop_api;
         $('#property-image').Jcrop({
-            aspectRatio: 8 / 6,
+            aspectRatio: {{ imageWidth }} / {{ imageHeight }},
             onSelect: function(c) {
                 var dimensions = [Math.floor(c.x), Math.floor(c.y), Math.floor(c.w), Math.floor(c.h)];
                 $('input[name="image[dimensions]"]').val(dimensions.join(','));

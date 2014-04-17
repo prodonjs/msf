@@ -99,21 +99,21 @@
 
 <?php include_once('footer.php'); ?>
 
-<script type="text/javascript">
-    $(document).ready(function(){
-        $('div.about_squares a').click(function() {
-           var infoType = $(this).children().first().attr('class');
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('div.aboutSquares a').click(function() {
+               var infoType = $(this).children().first().attr('class');
 
-           // Remove any existing info popups and hover states
-           $('div.info').hide();
-           $('hoverStock').removeClass('hoverStick');
+               // Remove any existing info popups and hover states
+               $('div.info').hide();
+               $('.hoverStick').removeClass('hoverStick');
 
-           // Add the hover state
-           $('.' + infoType).toggleClass('hoverStick');
-           $('div.' + infoType + '_info').show();
+               // Add the hover state
+               $('.' + infoType).toggleClass('hoverStick');
+               $('div.' + infoType + '_info').show();
+            });
         });
-    });
-</script>
+    </script>
 
 </body>
 </html>

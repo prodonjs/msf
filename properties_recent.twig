@@ -1,32 +1,34 @@
-<div id="banner-fade">
-    <ul class="bjqs">
-        {% for p in properties %}
-        <li id="slide-{{ loop.index }}">
-            <img src="{{ imagesPath ~ "/" ~ p.image.name }}" alt="{{ p.name }}" />
-            <div>
-                <h2>{{ p.name|e }}</h2>
-                <p>{{ p.city|e }}, {{ p.state|e }} {{ p.zip }}</p>
-                <p><span>Financing</span><br/>Amount ${{ p.amountFinanced|number_format }}</p>
-                <p><span>Closed</span><br/>{{ property.closingDate|date("m/d/Y") }}</p>
-            </div>
-        </li>
-        {% endfor %}
-    </ul>
-    <div class="clearfix"></div>
-</div>
-<div class="slideDeck">
-    <p id="title">FEATURED FINANCINGS</p>
 {% for p in properties %}
-    <div class="onDeck">
-        <a id="slide-{{ loop.index }}-thumb" class="first" href="#">
-            <img class="thumbnailSlide" src="{{ imagesPath ~ "/" ~ p.image.thumbnailName }}" alt="{{ p.name }} thumbnail">
-            <p class="">{{ p.name|e }}</p>
-            <p class="">Financed ${{ p.amountFinanced|number_format }}</p>
-            <p class="">Closed {{ property.closingDate|date("m/d/Y") }}</p>
-            <span class=""></span>
-        </a>
-        <div class="clearfix"></div>
-    </div>
-{% endfor %}
-    <a id="seeAll" href="/msf/properties/">See all Financings</a>
+<div class="listing">
+    <a href="#">
+        <img src="{{ imagesPath ~ "/" ~ p.image.thumbnailName }}" alt="{{ p.name }} thumbnail">
+    </a>
+    <p class="name">{{ p.name|e }}</p>
+    <p class="city">{{ p.city|e }}</p>
+    <p class="state">{{ p.state|e }}</p>
+    <p class="amount">${{ p.amountFinanced|number_format }}</p>
+    <p class="type">{{ p.type|e }}</p>
+    <a class="moreDetails" href="#">
+        More Details
+        <span>
+            <!--Button Replacement-->
+        </span>
+    </a>
 </div>
+{% endfor %}
+<!-- POP UP BOX DIV -->
+<div class="propertiesPop">
+    <a href="#"><img src="images/image_600x320.jpg"></a>
+    <p class="name">Name</p>
+    <!-- City and State go on the same line, divided by a comma -->
+    <p class="city">City</p>
+    <p class="state">State</p>
+    <p class="amount">$XXX,XXX</p>
+    <!-- type of proerty listed - page is to be filtered by this type, this should be a drop down in the add a new property feature -->
+    <p class="type">Type</p>
+    <!-- this is only to be shown when the user clikcs on the more info button-->
+    <p class="date">Closing Date</p>
+    <!-- this is only to be shown when the user clikcs on the more info button -->
+    <p class="description"><span>Description:</span> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.</p>
+</div>
+<!-- END OF POP UP BOX DIV -->

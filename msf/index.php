@@ -110,6 +110,8 @@ $app->group('/admin/properties', function() use ($app) {
                 'editUrl' => $app->urlFor('admin_properties_edit', array('id' => $id)),
                 'indexUrl' => $app->urlFor('admin_properties_index'),
                 'imagesPath' => $app->config('imagesPath'),
+                'imageWidth' => \msf\models\Property::PREFERRED_IMG_WIDTH,
+                'imageHeight' => \msf\models\Property::PREFERRED_IMG_HEIGHT
             ));
         }
         catch (\RuntimeException $e) {
@@ -176,16 +178,19 @@ $app->group('/admin/properties', function() use ($app) {
 });
 
 /**
- * Recent Property financings
+ * Non-Admin protected functions
  */
-$app->get('/properties/recent', function() use ($app) {
-    $properties = \msf\models\Property::FindAll($app->config('datasource'), 3, 'created', 'DESC');
-    $app->log->info("Properties - Recent Financings");
-    $app->render('properties_recent.twig', array(
+$app->get('/properties/recent/:number', function($number) use ($app) {
+    $properties = \msf\models\Property::FindAll($app->config('datasource'), $number, 'created', 'DESC');
+    $app->etag(md5($number . json_encode($properties)));
+    $app->log->info("Properties - Recent ({$number})");
+    /* If number is 3, use the slider template, otherwise use the recent template */
+    $template = $number == 3 ? 'properties_slider.twig' : 'properties_recent.twig';
+    $app->render($template, array(
         'properties' => $properties,
         'imagesPath' => $app->config('imagesPath')
     ));
-})->name('recent_financings');
+})->conditions(array('number' => '\d+'))->name('properties_recent');
 
 // Run app
 $app->run();

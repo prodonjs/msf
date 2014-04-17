@@ -46,7 +46,6 @@
             <!--END OF WRAPPER --></div>
 
         <?php include_once('footer.php'); ?>
-
         <script class="secret-source">
             function configureSlideshow() {
                 $('#banner-fade').bjqs({
@@ -75,7 +74,7 @@
 
             /* jQuery document ready event */
             $(document).ready(function($) {
-                $.get('/msf/properties/recent', function(data) {
+                $.get('/msf/properties/recent/3', function(data) {
                     $('#recent-financings').html(data);
                     configureSlideshow();
                 });
