@@ -13,7 +13,11 @@
     <label>State</label>
     <input type="text" name="property[state]" placeholder="State" maxlength="2" required /><br>
     <label>Type</label>
-    <input type="text" name="property[type]" placeholder="Type" required /><br>
+    <select name="property[type]" required>
+        {% for t in propertyTypes %}
+	<option value="{{ t|e }}">{{ t|e }}</option>
+	{% endfor %}  
+    </select><br>
     <label>Amount Financed</label>
     <input type="number" name="property[amountFinanced]" placeholder="Amount Financed" required /><br>
     <label>Closing Date</label>

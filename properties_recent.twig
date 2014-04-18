@@ -1,34 +1,33 @@
 {% for p in properties %}
-<div class="listing">
-    <a href="#">
-        <img src="{{ imagesPath ~ "/" ~ p.image.thumbnailName }}" alt="{{ p.name }} thumbnail">
+<div class="listing {{ p.type|lower|replace({' ': ''}) }}">
+    <a class="lightbox-link" href="#property-{{ p.id }}">
+        <img src="{{ imageSettings.path ~ "/" ~ p.image.thumbnailName }}" alt="{{ p.name }} thumbnail">
     </a>
     <p class="name">{{ p.name|e }}</p>
     <p class="city">{{ p.city|e }}</p>
     <p class="state">{{ p.state|e }}</p>
     <p class="amount">${{ p.amountFinanced|number_format }}</p>
     <p class="type">{{ p.type|e }}</p>
-    <a class="moreDetails" href="#">
+    <a class="moreDetails lightbox-link" href="#property-{{ p.id }}">
         More Details
         <span>
             <!--Button Replacement-->
         </span>
     </a>
 </div>
-{% endfor %}
-<!-- POP UP BOX DIV -->
-<div class="propertiesPop">
-    <a href="#"><img src="images/image_600x320.jpg"></a>
-    <p class="name">Name</p>
-    <!-- City and State go on the same line, divided by a comma -->
-    <p class="city">City</p>
-    <p class="state">State</p>
-    <p class="amount">$XXX,XXX</p>
-    <!-- type of proerty listed - page is to be filtered by this type, this should be a drop down in the add a new property feature -->
-    <p class="type">Type</p>
-    <!-- this is only to be shown when the user clikcs on the more info button-->
-    <p class="date">Closing Date</p>
-    <!-- this is only to be shown when the user clikcs on the more info button -->
-    <p class="description"><span>Description:</span> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.</p>
+<div id="property-{{ p.id }}" class="propertiesPop" style="display: none">
+    <a href="#">
+	<img src="{{ imageSettings.path ~ "/" ~ p.image.name }}" alt="{{ p.name }}"
+        style="width: imageSettings.dimensions.width; height: imageSettings.dimensions.height;">
+    </a>
+    <p class="name">{{ p.name|e }}</p>
+    <p class="city">{{ p.city|e }}</p>
+    <p class="state">{{ p.state|e }}</p>
+    <p class="amount">${{ p.amountFinanced|number_format }}</p>
+    <p class="type">{{ p.type|e }}</p>
+    <p class="date">{{ p.closingDate }}</p>
+    <p class="description"><span>Description:</span>
+      {{ p.description }}
+    </p>	
 </div>
-<!-- END OF POP UP BOX DIV -->
+{% endfor %}

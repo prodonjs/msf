@@ -14,9 +14,9 @@ class ImageUploader extends \Slim\Middleware
         if(!empty($_FILES['image']['name'])) {
             try {
                 $image = \msf\models\Image::CreateFromUpload(
-                  'image', $this->app->config('imagesUploadPath'),
-                  \msf\models\Property::THUMBNAIL_WIDTH,
-                  \msf\models\Property::THUMBNAIL_HEIGHT
+                  'image', $this->app->imageSettings['uploadPath'],
+                  $this->app->imageSettings['dimensions']['thumbnailWidth'],
+		  $this->app->imageSettings['dimensions']['thumbnailHeight']
                 );
                 $this->app->image = $image;
             }

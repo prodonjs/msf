@@ -53,3 +53,7 @@ define('TEMPLATES_PATH', SITE_ROOT);
 define('MSF_ADMIN_USER', 'msf_admin');
 define('MSF_ADMIN_PASS', 'msf_P@ss');
 
+/**
+ * Set SLIM_MODE
+ */
+$_ENV['SLIM_MODE'] = $_SERVER['SERVER_NAME'] === 'msf.com' ? 'production' : 'development';

@@ -22,8 +22,10 @@
                 "boxImage">Content Box #2</a> <a class="box" href="#">Market Data</a> <!-- end of 4col -->
                 <div class="clearfix"></div><!-- END OF CONTENT WRAPPER -->
             </div><!--END OF WRAPPER -->
-        </div><?php include_once('footer.php'); ?><script class="secret-source" type="text/javascript">
-    function configureSlideshow() {
+        </div>
+        <?php include_once('footer.php'); ?>
+        <script class="secret-source" type="text/javascript">
+	    function configureSlideshow() {
                 $('#banner-fade').bjqs({
                     height      : 250,
                     width       : 690,
@@ -46,6 +48,13 @@
                     $('div.onDeck a').children().removeClass('highlighted');
                     $('div a#' + thumbId).children().addClass('highlighted');
                 });
+
+		/* Handle click of thumbnail images */
+		$('div.onDeck a').on('click', function() {
+		    var sliderId = $(this).attr('id').replace('-thumb', '');
+		    $('li.bjqs-slide').fadeOut();
+             	    $('#' + sliderId).fadeIn();
+	        });
             }
 
             /* jQuery document ready event */

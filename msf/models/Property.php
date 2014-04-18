@@ -16,6 +16,17 @@ class Property {
     const THUMBNAIL_HEIGHT = 160;
 
     /**
+     * Valid type values
+     */
+    public static $validTypes = array(
+        'Multi-Family',
+        'Retail',
+        'Office',
+        'Industry',
+        'Hotels'
+    );
+
+    /**
      * Identifer
      * @var string
      */
@@ -127,8 +138,8 @@ class Property {
         if(empty($this->state) || strlen($this->state) !== 2) {
             $this->validationErrors['state'] = 'State is a required attribute and must be exactly 2 characters';
         }
-        if(empty($this->type)) {
-            $this->validationErrors['type'] = 'Property type is a required attribute';
+        if(empty($this->type) || !in_array($this->type, self::$validTypes)) {
+            $this->validationErrors['type'] = 'Property type is a required attribute and must be one of ' . implode(', ', self::$validTypes);
         }
         if(empty($this->amountFinanced) || !is_numeric($this->amountFinanced) || $this->amountFinanced < 0) {
             $this->validationErrors['amountFinanced'] = 'Financed amount is a required attribute and must be greater than $0';

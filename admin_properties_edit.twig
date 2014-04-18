@@ -19,7 +19,11 @@
     <label>State</label>
     <input type="text" name="property[state]" value="{{ property.state }}" maxlength="2" required /><br>
     <label>Type</label>
-    <input type="text" name="property[type]" value="{{ property.type }}" required /><br>
+    <select name="property[type]" required>
+        {% for t in propertyTypes %}
+        <option value="{{ t|e }}">{{ t|e }}</option>
+        {% endfor %}
+    </select><br>
     <label>Amount Financed</label>
     <input type="number" name="property[amountFinanced]" value="{{ property.amountFinanced }}" required /><br>
     <label>Closing Date</label>
@@ -31,7 +35,7 @@
         <button type="button" id="clear-crop">Clear Crop</button>
     </p>
     <input type="hidden" name="image[dimensions]"/>
-    <img id="property-image" src="{{ imagesPath ~ "/" ~ property.image.name }}" alt="{{ p.name }} image" /><br>
+    <img id="property-image" src="{{ imageSettings.path ~ "/" ~ property.image.name }}" alt="{{ p.name }} image" /><br>
     <label>Replace Image</label>
     <input type="file" name="image" accept="image/*" />
     <input type="submit" value="Save Property">
@@ -45,7 +49,7 @@
     $(document).ready(function() {
         var jcrop_api;
         $('#property-image').Jcrop({
-            aspectRatio: {{ imageWidth }} / {{ imageHeight }},
+            aspectRatio: {{ imageSettings.dimensions.width }} / {{ imageSettings.dimensions.height }},
             onSelect: function(c) {
                 var dimensions = [Math.floor(c.x), Math.floor(c.y), Math.floor(c.w), Math.floor(c.h)];
                 $('input[name="image[dimensions]"]').val(dimensions.join(','));

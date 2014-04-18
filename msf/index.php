@@ -1,20 +1,23 @@
 <?php
 require_once 'bootstrap.php';
 
-// Prepare app
-$dataSource = new \msf\models\FileDataSource(FILE_DATA_SOURCE_PATH);
-$imagesUploadPath = $dataSource->getSubTypePath(\msf\models\FileDataSource::IMAGES);
-$imagesPath = str_replace(SITE_ROOT, '', $imagesUploadPath);
-
+/* Configure application-wide settings */
 $app = new \Slim\Slim(array(
-    'templates.path' => TEMPLATES_PATH,
-    'datasource' => $dataSource,
-    'imagesUploadPath' => $imagesUploadPath,
-    'imagesPath' => $imagesPath
+    'templates.path' => TEMPLATES_PATH
 ));
+$app->dataSource = new \msf\models\FileDataSource(FILE_DATA_SOURCE_PATH);
+$images = array();
+$images['uploadPath'] = $app->dataSource->getSubTypePath(\msf\models\FileDataSource::IMAGES);
+$images['path'] = str_replace(SITE_ROOT, '', $images['uploadPath']);
+$images['dimensions'] = array(
+    'width' => \msf\models\Property::PREFERRED_IMG_WIDTH,
+    'height' => \msf\models\Property::PREFERRED_IMG_HEIGHT,
+    'thumbnailWidth' => \msf\models\Property::THUMBNAIL_WIDTH,
+    'thumbnailHeight' => \msf\models\Property::THUMBNAIL_HEIGHT
+);
+$app->imageSettings = $images;
 
-// Create monolog logger and store logger in container as singleton
-// (Singleton resources retrieve the same log resource definition each time)
+/* Create monolog logger and store logger in container as singleton */
 $app->container->singleton('log', function () {
     $log = new \Monolog\Logger('MS&F Administrative Portal');
     $log->pushHandler(new \Monolog\Handler\StreamHandler(
@@ -59,14 +62,15 @@ $app->view->parserExtensions = array(new \Slim\Views\TwigExtension());
 $app->group('/admin/properties', function() use ($app) {
     /* Properties management console */
     $app->get('/', function() use ($app) {
-        $properties = \msf\models\Property::FindAll($app->config('datasource'), 0, 'created', 'DESC');
+        $properties = \msf\models\Property::FindAll($app->dataSource, 0, 'created', 'DESC');
         $app->log->info("Properties - View All");
         $app->render('admin_properties_index.twig', array(
             'pageTitle' => 'Properties Management Console',
             'properties' => $properties,
-            'imagesPath' => $app->config('imagesPath'),
+            'imageSettings' => $app->imageSettings,
             'addUrl' => $app->urlFor('admin_properties_add'),
-            'editUrl' => $app->urlFor('admin_properties_edit')
+            'editUrl' => $app->urlFor('admin_properties_edit'),
+	    'deleteUrl' => $app->urlFor('admin_properties_delete')
         ));
     })->name('admin_properties_index');
     /* Create new Property form */
@@ -74,13 +78,14 @@ $app->group('/admin/properties', function() use ($app) {
         $app->log->info("Properties - Create New");
         $app->render('admin_properties_add.twig', array(
             'pageTitle' => 'Add a New Property',
+	    'propertyTypes' => \msf\models\Property::$validTypes,
             'indexUrl' => $app->urlFor('admin_properties_index')
         ));
     })->name('admin_properties_add');
     /* Create new Property post-handler */
     $app->post('/add', function() use ($app) {
         $data = $app->request->post();
-        $property = new \msf\models\Property($app->config('datasource'));
+        $property = new \msf\models\Property($app->dataSource);
         if(!isset($app->image)) {
             $message = "Unable to upload image for Property";
             $app->log->error($message);
@@ -102,16 +107,14 @@ $app->group('/admin/properties', function() use ($app) {
     /* Edit Property form */
     $app->get('/edit/:id', function($id) use ($app) {
         try {
-            $property = \msf\models\Property::Get($id, $app->config('datasource'));
-            $app->log->info("Properties - Edit ID: {$id}");
+            $property = \msf\models\Property::Get($id, $app->dataSource);
             $app->render('admin_properties_edit.twig', array(
                 'property' => $property,
                 'pageTitle' => 'Edit Property',
+                'propertyTypes' => \msf\models\Property::$validTypes,
                 'editUrl' => $app->urlFor('admin_properties_edit', array('id' => $id)),
                 'indexUrl' => $app->urlFor('admin_properties_index'),
-                'imagesPath' => $app->config('imagesPath'),
-                'imageWidth' => \msf\models\Property::PREFERRED_IMG_WIDTH,
-                'imageHeight' => \msf\models\Property::PREFERRED_IMG_HEIGHT
+                'imageSettings' => $app->imageSettings
             ));
         }
         catch (\RuntimeException $e) {
@@ -124,7 +127,7 @@ $app->group('/admin/properties', function() use ($app) {
     /* Edit Property put-handler */
     $app->put('/edit/:id', function($id) use ($app) {
         try {
-            $property = \msf\models\Property::Get($id, $app->config('datasource'));
+            $property = \msf\models\Property::Get($id, $app->dataSource);
         }
         catch (\RuntimeException $e) {
             $message = "Unable to save Property";
@@ -143,7 +146,9 @@ $app->group('/admin/properties', function() use ($app) {
         else if (!empty($data['image']['dimensions'])) {
             $dimensions = explode(',', $data['image']['dimensions']);
             $property->image->cropToDimensions($dimensions[0], $dimensions[1], $dimensions[2], $dimensions[3]);
-            $property->image->generateThumbnail(\msf\models\Property::THUMBNAIL_WIDTH, \msf\models\Property::THUMBNAIL_HEIGHT);
+            $property->image->generateThumbnail(
+                $app->imageSettings['dimensions']['thumbnailWidth'], $app->imageSettings['dimensions']['thumbnailHeight']
+            );
             $app->log->info("Property Image Cropped - ID: {$property->id}");
         }
 
@@ -162,7 +167,7 @@ $app->group('/admin/properties', function() use ($app) {
     /* Delete a property */
     $app->delete('/delete/:id', function ($id) use ($app) {
         try {
-            $property = \msf\models\Property::Get($id, $app->config('datasource'));
+            $property = \msf\models\Property::Get($id, $app->dataSource);
             if($property->delete()) {
                 $app->log->info("Property deleted - ID: {$id}");
             }
@@ -174,21 +179,21 @@ $app->group('/admin/properties', function() use ($app) {
             $app->log->error("Property does not exist - ID: {$id}");
         }
         $app->response->redirect($app->urlFor('admin_properties_index'));
-    });
+    })->name('admin_properties_delete');
 });
 
 /**
  * Non-Admin protected functions
  */
 $app->get('/properties/recent/:number', function($number) use ($app) {
-    $properties = \msf\models\Property::FindAll($app->config('datasource'), $number, 'created', 'DESC');
+    $properties = \msf\models\Property::FindAll($app->dataSource, $number, 'created', 'DESC');
     $app->etag(md5($number . json_encode($properties)));
     $app->log->info("Properties - Recent ({$number})");
     /* If number is 3, use the slider template, otherwise use the recent template */
     $template = $number == 3 ? 'properties_slider.twig' : 'properties_recent.twig';
     $app->render($template, array(
         'properties' => $properties,
-        'imagesPath' => $app->config('imagesPath')
+        'imageSettings' => $app->imageSettings
     ));
 })->conditions(array('number' => '\d+'))->name('properties_recent');
 

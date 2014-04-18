@@ -31,6 +31,7 @@
                 </ul>
                 <p>
                     Copyright © Morris, Smith & Feyh, Incorporated
-                </p>
+		</p>
+                <a href="/msf/admin/properties/">Administration</a>
             </div>
         </div>
