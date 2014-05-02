@@ -239,7 +239,18 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#414095', end
 	text-align: justify;
 	margin: 10px 0 10px 0;
 	clear: both;
+}
 
+.keyBody #contentWrapper div img.vcard{
+	float: left;
+
+}
+
+.vcards{
+	display:block;
+	width: 42px;
+	height: 34px;
+	
 }
 
 /************LOAN PRODUCTION*************/

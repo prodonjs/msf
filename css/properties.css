@@ -47,20 +47,21 @@
 }
 
 .propertiesPop{
-	padding: 10px;
+	padding: 20px;
 	float: left;
-	width: 800px;
-	border: black 1px dashed;	
+	width: auto;
+	border: black 1px solid;
 	font-size: 11pt;
 	font-weight: 400;
+	background: white;
 }
 
-		.propertiesPop img{
-			margin-left: 90px;
+		.propertiesPop img {
+			margin: 0 auto;
+			display: block;
 		}
 		
 		.propertiesPop p{
-			padding-left: 90px;
 			margin: 5px 0 5px 0;
 		}
 		

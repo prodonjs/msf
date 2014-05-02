@@ -17,9 +17,25 @@
                     billion of commercial real estate loans and Schedule D Bond placements in every region of the
                     continental United States. Read more about MS&F.
                 </h1>
-                <div id="recent-financings"></div><a class="box" href="#">Company News 
-                <!-- Add 3 most recent transactions here. Pull from PHP --></a> <a class="box" href="#" id=
-                "boxImage">Content Box #2</a> <a class="box" href="#">Market Data</a> <!-- end of 4col -->
+                <div id="recent-financings"></div>
+                
+				<section id="col4">
+					
+					<a class="box" href="#">Company News
+						<!-- Add 3 most recent transactions here. Pull from PHP -->
+					</a>
+					
+				
+					<a class="box" id="boxImage" href="#">Content Box #2
+						
+					</a>
+					
+					<a  class="box" href="#">Market Data
+						
+					</a>
+					
+				<!-- end of 4col --></section>
+                
                 <div class="clearfix"></div><!-- END OF CONTENT WRAPPER -->
             </div><!--END OF WRAPPER -->
         </div>

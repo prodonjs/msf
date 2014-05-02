@@ -19,6 +19,7 @@
                         Jeffrey M. Morris
                         <br>
                         President &#38; CEO
+                        <a class="vcards" href="vcards/JeffreyMMorris.vcf"><img class="vcard" src="vcards/vcardicon.png"/></a>
                     </h2>
                     <p>
                         Mr. Morris is the President, Chief Executive Officer and sole shareholder of Morris, Smith &
@@ -52,7 +53,8 @@
                     <h2>
                         Robert W. Smith
                         <br>
-                        Executive Vice President
+                        Senior Vice President
+                        <a class="vcards" href="vcards/RobertSmith.vcf"><img class="vcard" src="vcards/vcardicon.png"/></a>
                     </h2>
                     <p>
                         Mr. Smith is an Executive Vice President of Morris, Smith and Feyh, Inc. and has over thirty
@@ -83,7 +85,8 @@
                     <h2>
                         Michael J. Feyh
                         <br>
-                        Executive Vice President
+                        Senior Vice President
+                        <!-- <a class="vcards" href="vcards/JeffreyMMorris.vcf"><img class="vcard" src="vcards/vcardicon.png"/></a> -->
                     </h2>
                     <p>
                         Mr. Feyh is an Executive Vice President of MS&F. He was an original founding shareholder of the
@@ -106,13 +109,14 @@
                         oversight capacity by utilizing his knowledge and experience in construction lending to manage
                         the Company’s risk in these transactions. He also has outside interests that include alumni
                         activities of Ohio State University.
-                    </p><img src="images/personnel/.jpg">
+                    </p><img src="images/personnel/mike_feyh.jpg">
                 </div>
                 <div>
                     <h2>
                         Diana L. Thomas
                         <br>
                         Chief Financial Officer &#38; Director of Loan Servicing
+                        <a class="vcards" href="vcards/DianaThomas.vcf"><img class="vcard" src="vcards/vcardicon.png"/></a>
                     </h2>
                     <p>
                         Ms. Thomas has been with Morris, Smith & Feyh, Incorporated for the since 1991. She has more
@@ -138,7 +142,9 @@
                     <h2>
                         David L. Mathewson
                         <br>
-                        Vice President
+                        Senior Vice President
+                                            <a class="vcards" href="vcards/DavidMathewson.vcf"><img class="vcard" src="vcards/vcardicon.png"/></a>
+
                     </h2>
                     <p>
                         Mr. Mathewson has been a Vice President of Morris, Smith and Feyh, Inc. since 1997. He has more
@@ -150,6 +156,8 @@
                         Senior Underwriter in the origination of loans while also assisting in loan servicing,
                         including the administration of construction loans. He also developed a portfolio trading desk
                         which bought and sold RTC controlled loan portfolios following the Savings and Loan collapse.
+                        <br/>
+                        <br/>
                         For the past fourteen years, Mr. Mathewson has been employed with Morris, Smith and Feyh,
                         Incorporated. He is currently responsible for overseeing the Underwriting Department with
                         direct involvement in the underwriting and analysis of originated loans. This has resulted in
@@ -167,7 +175,8 @@
                     <h2>
                         Chad B Kiner
                         <br>
-                        Senior Vice President of Loan Originations
+                        Senior Vice President
+	                    <a class="vcards" href="vcards/ChadKiner.vcf"><img class="vcard" src="vcards/vcardicon.png"/></a>
                     </h2>
                     <p>
                         Mr. Kiner is a Senior Vice President of Loan Originations where he works directly with his
@@ -200,51 +209,45 @@
                         placement of construction and permanent loan while developing new and profitable relationships.
                     </p><img src="images/personnel/chad kiner msandf.jpg">
                 </div>
+                
+                                <div>
+                    <h2>
+                        Scott L. Moore 
+                        <br>
+                        Senior Vice President
+                        <a class="vcards" href="vcards/ScottMoore.vcf"><img class="vcard" src="vcards/vcardicon.png"/></a>                    </h2>
+                    <p>
+                        Scott L. Moore has joined Morris, Smith & Feyh (“MS&F”) as Senior Vice President responsible for accelerating the firm’s growth with emphasis on multifamily and seniors housing mortgage origination activity.
+                        <br>
+                        <br>
+                        Mr. Moore’s brings over 25 years of mortgage banking experience with nearly $2 billion of transactional volume.  Prior to joining MS&F, Mr. Moore was head of national production for CBRE FHA Lending and prior to that was Managing Director with Red Capital Group.  He has also been employed by Ziegler Financing Corporation where he served as President and expanded the FHA healthcare platform. Prior to that, Mr. Moore was President of Lancaster Pollard Mortgage Company, where he managed a highly successful FHA-focused mortgage banking business. His experience includes 10 years with a national lodging chain where he was a client of MS&F.
+                        <br>
+                        <br>
+                        He graduated from The Ohio State University with a Bachelor's of Science degree in Finance with emphasis on real estate. He has served on the Commercial Board of Governors of the Mortgage Bankers Association, is a past Chair of the Multifamily Steering Committee and has been active in a variety of working groups within that organization. Mr. Moore is a frequent speaker for national and state-level senior living, healthcare and mortgage banking industry organizations. He will be based in MS&F’s Columbus, Ohio office.
+                    </p><img src="images/personnel/scott_moore.jpg">
+                </div>
+                
                 <div>
                     <h2>
                         A.J. Mangan
                         <br>
-                        Loan Originator
+                        Loan Origination Analyst
+                        <a class="vcards" href="vcards/AJMangan.vcf"><img class="vcard" src="vcards/vcardicon.png"/></a>
                     </h2>
                     <p>
-                        Ms. Merk is a Senior Analyst with the Cleveland office of Morris, Smith & Feyh, Inc. and is
-                        responsible for supporting her colleagues in both traditional commercial mortgage loan
-                        transactions as well as Credit Tenant Lease arrangements. After graduating from Bowling Green
-                        State University with a degree in finance in 2004, Ms. Merk has had the opportunity to work in
-                        areas of increasing responsibility for both the retail banking and corporate banking worlds.
-                        Prior to joining Morris, Smith & Feyh, Ms. Merk worked at KeyBank for nearly four years. Her
-                        career at KeyBank started as an analyst in the Life/Pension group, and then she proceeded to
-                        work as an associate of the private placement group within the KeyBanc Capital Markets
-                        division, where her focus was the Credit Tenant Lease product, structuring over $300 million in
-                        Credit Tenant Lease financing. Ms. Merk is pleased to bring her experience in the origination,
-                        structuring, management, marketing, and execution of transactions to Morris, Smith & Feyh, Inc.
+						A.J. Mangan is an loan origination analyst at Morris, Smith and Feyh, Incorporated. He has been employed with the company since 2010 as an intern, prior to graduation, which led to a full time position in 2012. Mr. Mangan graduated from Fisher College of Business at The Ohio State University with a BSBA degree in Real Estate. His education taught him the basic skills of commercial real estate, including but not limited to valuation analysis, appraisal, market research, Argus modeling, spreadsheet modeling and development.<br/><br/> 
+										
+						During his tenure at MS&F, A.J. has been involved in the underwriting role which has led to the placement of over $1.0 billion in commercial real estate loans, which has included every major property type, in all regions of the continental United States. Loan sizes have ranged from $1 million up to a $70 
+						million and loan products have included permanent, construction, forward, joint venture, bridge and mezzanine.
                     </p><img src="images/personnel/aj mangan msandf.jpg">
                 </div>
                 <div>
+                                  <div>
                     <h2>
-                        Elizabeth A. Merk (Cleveland Office)
+                        Joe Gonzales (Cleveland Office)
                         <br>
-                        Senior Analyst
-                    </h2>
-                    <p>
-                        Ms. Merk is a Senior Analyst with the Cleveland office of Morris, Smith & Feyh, Inc. and is
-                        responsible for supporting her colleagues in both traditional commercial mortgage loan
-                        transactions as well as Credit Tenant Lease arrangements. After graduating from Bowling Green
-                        State University with a degree in finance in 2004, Ms. Merk has had the opportunity to work in
-                        areas of increasing responsibility for both the retail banking and corporate banking worlds.
-                        Prior to joining Morris, Smith & Feyh, Ms. Merk worked at KeyBank for nearly four years. Her
-                        career at KeyBank started as an analyst in the Life/Pension group, and then she proceeded to
-                        work as an associate of the private placement group within the KeyBanc Capital Markets
-                        division, where her focus was the Credit Tenant Lease product, structuring over $300 million in
-                        Credit Tenant Lease financing. Ms. Merk is pleased to bring her experience in the origination,
-                        structuring, management, marketing, and execution of transactions to Morris, Smith & Feyh, Inc.
-                    </p>
-                </div>
-                <div>
-                    <h2>
-                        Joe Gonzales(Cleveland Office)
-                        <br>
-                        Vice President/Loan Originations
+                        Senior Vice President
+                        <a class="vcards" href="vcards/JoeGonzales.vcf"><img class="vcard" src="vcards/vcardicon.png"/></a>
                     </h2>
                     <p>
                         Mr. Gonzales is a Managing Director for the Cleveland office of MSF, responsible for
@@ -273,6 +276,29 @@
                         prepared to meet his clients’ needs with Morris, Smith, & Feyh, Inc.
                     </p>
                 </div>
+                  
+                  
+                    <h2>
+                        Elizabeth A. Merk (Cleveland Office)
+                        <br>
+                        Senior Analyst
+                        <a class="vcards" href="vcards/ElizabethMSnezek.vcf"><img class="vcard" src="vcards/vcardicon.png"/></a>
+                    </h2>
+                    <p>
+                        Ms. Merk is a Senior Analyst with the Cleveland office of Morris, Smith & Feyh, Inc. and is
+                        responsible for supporting her colleagues in both traditional commercial mortgage loan
+                        transactions as well as Credit Tenant Lease arrangements. After graduating from Bowling Green
+                        State University with a degree in finance in 2004, Ms. Merk has had the opportunity to work in
+                        areas of increasing responsibility for both the retail banking and corporate banking worlds.
+                        Prior to joining Morris, Smith & Feyh, Ms. Merk worked at KeyBank for nearly four years. Her
+                        career at KeyBank started as an analyst in the Life/Pension group, and then she proceeded to
+                        work as an associate of the private placement group within the KeyBanc Capital Markets
+                        division, where her focus was the Credit Tenant Lease product, structuring over $300 million in
+                        Credit Tenant Lease financing. Ms. Merk is pleased to bring her experience in the origination,
+                        structuring, management, marketing, and execution of transactions to Morris, Smith & Feyh, Inc.
+                    </p>
+                </div>
+
                 <div class="clearfix"></div><!-- END OF CONTENTWRAPPER -->
             </div><!-- END OF WRAPPER -->
         </div><?php include_once('footer.php'); ?>
