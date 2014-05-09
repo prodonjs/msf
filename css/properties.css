@@ -1,77 +1,76 @@
-#contentWrapper #propertyLinks{
-	list-style-type: none;
-	display: inline;
-	margin-bottom: 25px;
-	clear: left;
+#contentWrapper #propertyLinks {
+list-style-type:none;
+display:inline;
+margin-bottom:25px;
+clear:left;
 }
 
-#contentWrapper #propertyLinks li{
-	display: inline;
-	margin: 0 5px 0 5px; 
+#contentWrapper #propertyLinks li {
+display:inline;
+margin:0 5px;
 }
 
-.listing{
-	margin: 10px;
-	width: 300px;
-	font-size: 11pt;
-	font-weight: 400;
-	float: left;
-
+.listing {
+width:300px;
+font-size:11pt;
+font-weight:400;
+float:left;
+margin:10px;
 }
 
-.listing p{
-	line-height: 14pt;
+.listing p {
+line-height:14pt;
 }
 
-.listing .name{
-	font-size: 14pt;
-	font-weight: 800;
-	margin-top: 10px;
+.listing .city,.listing .state {
+display:inline;
 }
 
-.listing .city, .listing .state{
-	display: inline;
+.moreDetails {
+position:relative;
 }
 
-.moreDetails{
-	position: relative;
+.moreDetails span {
+position:absolute;
+top:0;
+left:0;
+background-image:url(images/moreInfobtn.png);
+width:107px;
+height:35px;
 }
 
-.moreDetails span{
-	position: absolute;
-	top:0px;
-	left: 0px;	
-	background-image: url(images/moreInfobtn.png);
-	width: 107px;
-	height: 35px;
+.propertiesPop {
+float:left;
+width:750px;
+border:#000 1px solid;
+font-size:11pt;
+font-weight:400;
+background:#FFF;
+padding:20px;
 }
 
-.propertiesPop{
-	padding: 20px;
-	float: left;
-	width: auto;
-	border: black 1px solid;
-	font-size: 11pt;
-	font-weight: 400;
-	background: white;
+.propertiesPop img {
+display:block;
+width:725px;
+margin:0 auto;
 }
 
-		.propertiesPop img {
-			margin: 0 auto;
-			display: block;
-		}
-		
-		.propertiesPop p{
-			margin: 5px 0 5px 0;
-		}
-		
-		.propertiesPop .name{
-			font-size: 14pt;
-			font-weight: 800;
-			margin-top: 10px;	
-			
-		}
-		
-		.propertiesPop .description span{
-			font-weight: 800;
-		}
+.propertiesPop p {
+margin:5px 0;
+}
+
+.propertiesPop .description span {
+font-weight:800;
+}
+
+p.closeBox {
+margin-top:20px;
+font-weight:700;
+color:#003d90;
+}
+
+.listing .name,.propertiesPop .name {
+font-size:14pt;
+font-weight:800;
+margin-top:10px;
+}
