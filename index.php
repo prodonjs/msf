@@ -12,10 +12,7 @@
             <?php include_once('header.php'); ?>
             <div id="contentWrapper">
                 <h1 class="homeH1">
-                    <span>Morris, Smith & Feyh, (MS&F) Incorporated</span> is a leading full service commercial real
-                    estate mortgage banking firm based in Columbus, Ohio. Since 1984, MS&F has financed over $4.0
-                    billion of commercial real estate loans and Schedule D Bond placements in every region of the
-                    continental United States. Read more about MS&F.
+                    For 30 years, sophisticated commercial borrowers have trusted Morris, Smith & Feyh, Incorporated (MS&F) to identify and execute the debt and equity solutions they need to capitalize on opportunities. We are owners and investors in commercial real estate who understand the interests of borrowers and lenders, and our full-service mortgage banking firm has financed over $6.0 billion of commercial real estate in 22 states. Every loan we have committed with our financially strong, market-leading lender clients has closed. <a href="about.php">Learn more about us</a>
                 </h1>
                 <div id="recent-financings"></div>
                 

@@ -47,7 +47,7 @@
                         From a personal perspective, Jeff has been married since 1980 and is the father of 4 children.
                         He has been a dedicated long distance runner and cyclist and has routinely been involved in
                         many charitable causes. He resides in Lexington, Ohio.
-                    </p><img src="images/personnel/jeff morris msandf.jpg">
+                    </p><img src="images/personnel/jeff_morris_msandf.jpg">
                 </div>
                 <div>
                     <h2>
@@ -79,7 +79,7 @@
                         include solving the financing needs of developers and investors of real estate with the
                         placement of construction and permanent loans and developing and maintaining relationships with
                         financial institutions.
-                    </p><img src="images/personnel/bob smith msandf.jpg">
+                    </p><img src="images/personnel/bob_smith_msandf.jpg">
                 </div>
                 <div>
                     <h2>
@@ -136,7 +136,7 @@
                         continually reviews processes and procedures in order to ensure the servicing department is
                         operating efficiently as well as providing accurate and timely information to both our
                         borrowers and lenders.
-                    </p><img src="images/personnel/diane thomas msandf.jpg">
+                    </p><img src="images/personnel/diane_thomas_msandf.jpg">
                 </div>
                 <div>
                     <h2>
@@ -169,7 +169,7 @@
                         included permanent, construction, forward, joint venture, bridge and mezzanine loans. He has
                         designed and implemented several internal computer software systems, including Argus, and has
                         regularly attended mortgage banking classes and seminars.
-                    </p><img src="images/personnel/dave matthewson msandf.jpg">
+                    </p><img src="images/personnel/dave_matthewson_msandf.jpg">
                 </div>
                 <div>
                     <h2>
@@ -207,7 +207,7 @@
                         Originations where his responsibilities include supporting upper management on the origination
                         of new and existing opportunities. Additionally Mr. Kiner will be assisting his clients in the
                         placement of construction and permanent loan while developing new and profitable relationships.
-                    </p><img src="images/personnel/chad kiner msandf.jpg">
+                    </p><img src="images/personnel/chad_kiner_msandf.jpg">
                 </div>
                 
                                 <div>
@@ -239,12 +239,16 @@
 										
 						During his tenure at MS&F, A.J. has been involved in the underwriting role which has led to the placement of over $1.0 billion in commercial real estate loans, which has included every major property type, in all regions of the continental United States. Loan sizes have ranged from $1 million up to a $70 
 						million and loan products have included permanent, construction, forward, joint venture, bridge and mezzanine.
-                    </p><img src="images/personnel/aj mangan msandf.jpg">
+                    </p><img src="images/personnel/aj_mangan_msandf.jpg">
                 </div>
+                
+                   <h3>Cleveland Office</h3>
+                   <hr/>
+                   
                 <div>
-                                  <div>
+                               
                     <h2>
-                        Joe Gonzales (Cleveland Office)
+                        Joe Gonzales
                         <br>
                         Senior Vice President
                         <a class="vcards" href="vcards/JoeGonzales.vcf"><img class="vcard" src="vcards/vcardicon.png"/></a>
@@ -275,11 +279,13 @@
                         Mac, and HUD). After nearly 17 years in all facets of commercial real estate, Joe is well
                         prepared to meet his clients’ needs with Morris, Smith, & Feyh, Inc.
                     </p>
+                    
+                    <img src="images/personnel/joe_gonzales.jpg">
                 </div>
                   
-                  
+                  <div>
                     <h2>
-                        Elizabeth A. Merk (Cleveland Office)
+                        Elizabeth A. Merk
                         <br>
                         Senior Analyst
                         <a class="vcards" href="vcards/ElizabethMSnezek.vcf"><img class="vcard" src="vcards/vcardicon.png"/></a>
@@ -297,6 +303,7 @@
                         Credit Tenant Lease financing. Ms. Merk is pleased to bring her experience in the origination,
                         structuring, management, marketing, and execution of transactions to Morris, Smith & Feyh, Inc.
                     </p>
+                    <img src="images/personnel/elizabeth_merk.jpg">
                 </div>
 
                 <div class="clearfix"></div><!-- END OF CONTENTWRAPPER -->

@@ -177,7 +177,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#414095', end
 }
 
 .onDeck img{
-	
+	width: 90px
 }
 .thumbnailSlide{
 	float: left;
@@ -191,7 +191,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#414095', end
 	text-align: left; 
 	z-index: 1;
 	position: relative;
-	font-size: 11pt;
+	font-size: 10pt;
+	margin-bottom: 5px;
 }
 
 .onDeck a p:first-child{
@@ -251,6 +252,17 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#414095', end
 	width: 42px;
 	height: 34px;
 	
+}
+
+.keyBody h3{
+	font-size: 16pt;
+	font-weight: 600;
+	
+}
+
+.keyBody hr{
+	margin: 20px 0 20px 0;
+	color: #223367;
 }
 
 /************LOAN PRODUCTION*************/
