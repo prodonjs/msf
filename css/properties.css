@@ -59,14 +59,16 @@ margin:0 auto;
 margin:5px 0;
 }
 
-.propertiesPop .description span {
-font-weight:800;
+.propertiesPop span {
+    color: #252469;
+    font-weight:800;
 }
 
 p.closeBox {
 margin-top:20px;
 font-weight:700;
 color:#003d90;
+cursor: pointer;
 }
 
 .listing .name,.propertiesPop .name {

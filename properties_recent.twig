@@ -18,17 +18,17 @@
 <div id="property-{{ p.id }}" class="propertiesPop" style="display: none">
     <a href="#">
 	<img src="{{ imageSettings.path ~ "/" ~ p.image.name }}" alt="{{ p.name }}"
-        style="width: imageSettings.dimensions.width; height: imageSettings.dimensions.height;">
+        style="width: {{ imageSettings.dimensions.width }}; height: {{ imageSettings.dimensions.height }};">
     </a>
     <p class="name">{{ p.name|e }}</p>
-    <p class="city">{{ p.city|e }}</p>
-    <p class="state">{{ p.state|e }}</p>
-    <p class="amount">${{ p.amountFinanced|number_format }}</p>
-    <p class="type">{{ p.type|e }}</p>
-    <p class="date">{{ p.closingDate }}</p>
-    <p class="description"><span>Description:</span>
-      {{ p.description }}
+    <p class="location"><span>Location: </span>{{ p.city ~ ", " ~ p.state|e }}</p>
+    <p class="amount"><span>Financed: </span>${{ p.amountFinanced|number_format }}</p>
+    <p class="type"><span>Type: </span>{{ p.type|e }}</p>
+    <p class="date"><span>Closed On: </span>{{ p.closingDate }}</p>
+    <p class="description">
+        <span>Description:</span><br>
+        {{ p.description }}
     </p>
-    <p class="closeBox"> [CLOSE] </p>	
+    <p class="closeBox">[CLOSE]</p>
 </div>
 {% endfor %}
