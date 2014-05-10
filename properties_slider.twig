@@ -2,8 +2,8 @@
     <ul class="bjqs">
         {% for p in properties %}
         <li id="slide-{{ loop.index }}">
-            <img src="{{ imageSettings.path ~ "/" ~ p.image.name }}" alt="{{ p.name }}" 
-	    style="width: {{ imageSettings.dimensions.width }}; height: {{ imageSettings.dimensions.height }};">
+            <img src="{{ imageSettings.path ~ "/" ~ p.image.name }}" alt="{{ p.name }}"
+                 style="width: {{ imageSettings.dimensions.width }}; height: {{ imageSettings.dimensions.height }};">
             <div>
                 <h2>{{ p.name|e }}</h2>
                 <p>{{ p.city|e }}, {{ p.state|e }} {{ p.zip }}</p>
@@ -22,7 +22,13 @@
         <a id="slide-{{ loop.index }}-thumb" class="first" href="#">
             <img class="thumbnailSlide" src="{{ imageSettings.path ~ "/" ~ p.image.thumbnailName }}" alt="{{ p.name }} thumbnail"
 	    style="width: {{ imageSettings.dimensions.thumbnailWidth }}; height: {{ imageSettings.dimensions.thumbnailHeight }};">
-            <p class="">{{ p.name|e }}</p>
+            <p class="">
+            {% if p.name|length > 17 %}
+                {{ p.name[0:17] ~ "..."|e }}
+            {% else %}
+                {{ p.name|e }}
+            {% endif %}
+            </p>
             <p class="">Financed ${{ p.amountFinanced|number_format }}</p>
             <p class="">Closed {{ property.closingDate|date("m/d/Y") }}</p>
             <span class=""></span>
