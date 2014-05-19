@@ -22,8 +22,7 @@ class Property {
         'Multi-Family',
         'Retail',
         'Office',
-        'Industry',
-        'Hotels'
+        'Industry'
     );
 
     /**

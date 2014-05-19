@@ -186,7 +186,7 @@ $app->group('/admin/properties', function() use ($app) {
  * Non-Admin protected functions
  */
 $app->get('/properties/recent/:number', function($number) use ($app) {
-    $properties = \msf\models\Property::FindAll($app->dataSource, $number, 'created', 'DESC');
+    $properties = \msf\models\Property::FindAll($app->dataSource, $number, 'closingDate', 'DESC');
     $app->etag(md5($number . json_encode($properties)));
     $app->log->info("Properties - Recent ({$number})");
     /* If number is 3, use the slider template, otherwise use the recent template */

@@ -5,7 +5,7 @@
 
 {% block content %}
 
-<a href="{{ addUrl }}" >Add a new Property</a>
+<a class="addPropertiesLink" href="{{ addUrl }}" >Add a new Property</a>
 {% for p in properties %}
 <div class="property">
     <h2>{{ p.name|e }}</h2>
@@ -20,11 +20,23 @@
         <strong>Financed for: </strong>{{ p.amountFinanced|number_format }}
     </p>
     <img src="{{ imageSettings.path ~ "/" ~ p.image.thumbnailName }}" alt="{{ p.name }} thumbnail" /><br>
-    <a href="{{ editUrl | replace({":id": p.id}) }}">Edit</a>
+    <a class="editPropertiesLink" href="{{ editUrl | replace({":id": p.id}) }}">Edit</a>
     <form method="post" action="{{ deleteUrl | replace({":id": p.id}) }}">
         <input type="hidden" name="_METHOD" value="DELETE"/>
-        <input type="submit" value="Delete"/>
+        <input class="deletePropertiesLink" type="submit" value="Delete"/>
     </form>
 </div>
 {% endfor %}
+{% endblock %}
+{% block jsIncludes %}
+<script type="text/javascript">
+  $(document).ready(function($) {
+      // Handle filtering on anchor tags
+      $('input.deletePropertiesLink').click(function(e) {
+          if (!confirm('Are you sure you want to delete this property?')) {
+            e.preventDefault();
+          }
+      });
+  });
+</script>
 {% endblock %}

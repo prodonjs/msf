@@ -8,7 +8,7 @@
 {% endblock %}
 
 {% block content %}
-<a href="{{ indexUrl }}" >Back to Properties list</a>
+<a class="backPropertiesLink" href="{{ indexUrl }}" >Back to Properties list</a>
 <form id="properties-edit-form" action="{{ editUrl }}" method="post" enctype="multipart/form-data">
     <input type="hidden" name="_METHOD" value="PUT" />
     <input type="hidden" name="property[id]" value="{{ property.id }}" />
@@ -29,8 +29,8 @@
     <label>Closing Date</label>
     <input type="date" name="property[closingDate]" value="{{ property.closingDate }}" required /><br>
     <label>Description</label>
-    <textarea name="property[description]">{{ property.description }}</textarea><br>
-    <p>
+    <textarea class="descProperties" name="property[description]">{{ property.description }}</textarea><br>
+    <p class="cropText">
         Click and Drag to Crop the Image
         <button type="button" id="clear-crop">Clear Crop</button>
     </p>
@@ -38,7 +38,7 @@
     <img id="property-image" src="{{ imageSettings.path ~ "/" ~ property.image.name }}" alt="{{ p.name }} image" /><br>
     <label>Replace Image</label>
     <input type="file" name="image" accept="image/*" />
-    <input type="submit" value="Save Property">
+    <input class="saveProperty" type="submit" value="Save Property">
 </form>
 {% endblock %}
 

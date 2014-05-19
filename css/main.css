@@ -452,3 +452,63 @@ margin-top: 5px;
 
 .bold{font-weight: 600;}
 .red{color: red; font-size: 10pt;}
+
+/* Properties Administration Styles */
+a.addPropertiesLink {
+  background: #7182ff;
+  padding: 5px;
+  border: 2px solid #001298;
+  font-weight: bold;
+  color: #001298;
+}
+div.property {  margin: 25px 0 25px 0 }
+a.editPropertiesLink {
+  background: #73ff87;
+  padding: 5px;
+  border: 2px solid #008312;
+  font-weight: bold;
+  color: #008312;
+  display: inline-block;
+  margin-left: 2px;
+}
+input.deletePropertiesLink {
+  width: auto;
+  background: #ff9059;
+  padding: 5px;
+  border: 2px solid #983200;
+  font-weight: bold;
+  color: #983200;
+  display: inline;
+}
+input.addPropertiesLink {
+  background: #7182ff;
+  padding: 5px;
+  border: 2px solid #001298;
+  font-weight: bold;
+  color: #001298;
+}
+a.backPropertiesLink {
+  padding: 5px;
+  background: #d5d5d5;
+  border: 2px solid #3668b2;
+  margin-bottom: 15px;
+  display: inline-block;
+  font-weight: bold;
+}
+textarea.descProperties {
+  width: 400px;
+  height: 75px;
+}
+p.cropText {
+  margin: 20px 0 20px 0;
+  font-weight: bold;
+}
+input.saveProperty {
+  width: 175px;
+  background: #92ff71;
+  border: 2px solid #2a7513;
+  color: #2a7513;
+  font-weight: bold;
+  padding: 5px;
+  font-size: 14pt;
+}
