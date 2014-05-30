@@ -17,8 +17,7 @@
 </div>
 <div id="property-{{ p.id }}" class="propertiesPop" style="display: none">
     <a href="#">
-	<img src="{{ imageSettings.path ~ "/" ~ p.image.name }}" alt="{{ p.name }}"
-        style="width: {{ imageSettings.dimensions.width }}; height: {{ imageSettings.dimensions.height }};">
+	<img src="{{ imageSettings.path ~ "/" ~ p.image.name }}" alt="{{ p.name }}">
     </a>
     <p class="name">{{ p.name|e }}</p>
     <p class="location"><span>Location: </span>{{ p.city ~ ", " ~ p.state|e }}</p>

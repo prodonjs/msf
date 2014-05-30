@@ -61,39 +61,27 @@ class Image {
     } // end __construct
 
     /**
-     * Generates a thumbnail from the current image using the specified prefix
-     * and scaling to fit within the dimensions provided
-     * @param string $prefix
+     * Scales the image to fit within the preferred dimensions
      * @param int $width
      * @param int $height
      * @return boolean
      */
-    public function generateThumbnail($width, $height) {
+    public function scaleImage($width, $height, $isThumbnail=true) {
         $image = $this->_getImageResource();
-        $sizeInfo = getimagesize($this->fullPath);
-        $origWidth = (int) $sizeInfo[0];
-        $origHeight = (int) $sizeInfo[1];
+        list($newWidth, $newHeight, $origWidth, $origHeight) =
+             $this->_getScaledDimensions($width, $height);
 
-        if($origWidth > $origHeight) {
-            // Wide image
-            $newWidth = $width;
-            $newHeight = round($origHeight * ($newWidth / $origWidth));
-        }
-        else {
-            // Tall image
-            $newHeight = $height;
-            $newWidth = round($origWidth * ($newHeight / $origHeight));
-        }
-        $thumbnail = @imagecreatetruecolor($newWidth, $newHeight);
-        imagecopyresized($thumbnail, $image, 0, 0, 0, 0, $newWidth, $newHeight, $origWidth, $origHeight);
+        $scaled = @imagecreatetruecolor($newWidth, $newHeight);
+        imagecopyresampled($scaled, $image, 0, 0, 0, 0, $newWidth,
+                         $newHeight, $origWidth, $origHeight);
+        $fileName = $isThumbnail ? $this->thumbnailPath : $this->fullPath;
         if($this->type === 'jpg') {
-            return imagejpeg($thumbnail, $this->thumbnailPath, 90);
+            return imagejpeg($scaled, $fileName, 90);
         }
         else if($this->type === 'png') {
-            return imagepng($thumbnail, $this->thumbnailPath, 1);
+            return imagepng($scaled, $fileName, 1);
         }
     }
-
 
     /**
      * Crops the image to the specified coordinates
@@ -113,6 +101,32 @@ class Image {
         else if($this->type === 'png') {
             return imagepng($cropped, $this->fullPath, 1);
         }
+    }
+
+    /**
+     * Accepts preferred width and height value and returns
+     * an array with:
+     * (new-scaled width, new-scaled height, orig width, orig height)
+     * @param type $width
+     * @param type $height
+     * @return array
+     */
+    private function _getScaledDimensions($width, $height) {
+        $sizeInfo = getimagesize($this->fullPath);
+        $origWidth = (int) $sizeInfo[0];
+        $origHeight = (int) $sizeInfo[1];
+
+        if($origWidth > $origHeight) {
+            // Wide image
+            $newWidth = $width;
+            $newHeight = round($origHeight * ($newWidth / $origWidth));
+        }
+        else {
+            // Tall image
+            $newHeight = $height;
+            $newWidth = round($origWidth * ($newHeight / $origHeight));
+        }
+        return array($newWidth, $newHeight, $origWidth, $origHeight);
     }
 
     /**
@@ -140,18 +154,18 @@ class Image {
         $validExtensions = array('jpg', 'png');
         $validMimeTypes = array('image/jpeg', 'image/pjpeg', 'image/png');
 
-        return in_array($extension, $validExtensions) && in_array($mimeType, $validMimeTypes);
+        return in_array($extension, $validExtensions)
+               && in_array($mimeType, $validMimeTypes);
     }
 
     /**
      * Handle a standard POST form upload for a single image
      * @param string $name Uploaded file name from form
      * @param string $path Path where image should be saved
-     * @param int $thumbnailWidth Width of thumbnail image
-     * @param int $thumbnailHeight Height of thumbnail image
+     * @param array $dimensions [Width, Height, Thumbnail Width, Thumbnail Height]
      * @return a single Image object
      */
-    public static function CreateFromUpload($name, $path, $thumbnailWidth, $thumbnailHeight) {
+    public static function CreateFromUpload($name, $path, $dimensions) {
         $fileData = $_FILES[$name];
         if($fileData['error'] !== UPLOAD_ERR_OK) {
             throw new \RuntimeException("{$fileData['name']} failed to upload");
@@ -162,9 +176,12 @@ class Image {
         $destination = $path . DS . $fileData['name'];
         $extension = substr($destination, -3);
         $mimeType = $fileData['type'];
-        if(self::IsValidImage($extension, $mimeType) && move_uploaded_file($fileData['tmp_name'], $destination)) {
+        if(self::IsValidImage($extension, $mimeType)
+           && move_uploaded_file($fileData['tmp_name'], $destination)) {
             $image = new Image($destination);
-            $image->generateThumbnail($thumbnailWidth, $thumbnailHeight);
+            // Scale the image and its thumbnail to the appropriate size
+            $image->scaleImage($dimensions[0], $dimensions[1], false);
+            $image->scaleImage($dimensions[2], $dimensions[3], true);
             return $image;
         }
         else {

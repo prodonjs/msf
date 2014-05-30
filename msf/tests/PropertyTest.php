@@ -11,14 +11,14 @@ class PropertyTest extends \PHPUnit_Framework_TestCase {
         $this->property->name = 'Property Name';
         $this->property->city = 'City';
         $this->property->state = 'AA';
-        $this->property->type = 'Any Industry';
+        $this->property->type = 'Retail';
         $this->property->amountFinanced = 350000;
         $this->property->description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin eget fringilla nisl. ";
         $this->property->description .= "Integer vitae viverra risus. Nam tincidunt ullamcorper nisl, non fermentum dui venenatis et. ";
         $this->property->description .= "Praesent mollis enim metus, a vestibulum neque pharetra sed. Mauris nec nulla sit amet orci consequat ";
         $this->property->description .= "scelerisque. Nulla facilisis semper ipsum, vel laoreet est congue ut.";
         $this->property->closingDate = '2014-01-01';
-        $this->property->image = new \msf\models\Image(TEST_DATA_PATH . DS . 'images' . DS . 'png_test_image.png');
+        $this->property->image = new \msf\models\Image(TEST_DATA_PATH . DS . 'images' . DS . 'bank.png');
     } // end setUp()
 
     public function testValidation() {
@@ -35,10 +35,15 @@ class PropertyTest extends \PHPUnit_Framework_TestCase {
     } // end testSave()
 
     public function testSaveAndDelete() {
+        copy($this->property->image->fullPath, "{$this->property->image->fullPath}.bak");
+        copy($this->property->image->thumbnailPath, "{$this->property->image->thumbnailPath}.bak");
         $fileName = $this->property->save();
 
         $this->assertTrue($this->property->delete());
         $this->assertFileNotExists($fileName);
+
+        rename("{$this->property->image->fullPath}.bak", $this->property->image->fullPath);
+        rename("{$this->property->image->thumbnailPath}.bak", $this->property->image->thumbnailPath);
     } // end testSave()
 
     public function testSave_invalid() {

@@ -145,9 +145,12 @@ $app->group('/admin/properties', function() use ($app) {
         /* Check for image crop */
         else if (!empty($data['image']['dimensions'])) {
             $dimensions = explode(',', $data['image']['dimensions']);
-            $property->image->cropToDimensions($dimensions[0], $dimensions[1], $dimensions[2], $dimensions[3]);
-            $property->image->generateThumbnail(
-                $app->imageSettings['dimensions']['thumbnailWidth'], $app->imageSettings['dimensions']['thumbnailHeight']
+            $property->image->cropToDimensions(
+                $dimensions[0], $dimensions[1], $dimensions[2], $dimensions[3]);
+            $property->image->scaleImage(
+                $app->imageSettings['dimensions']['thumbnailWidth'],
+                $app->imageSettings['dimensions']['thumbnailHeight'],
+                true
             );
             $app->log->info("Property Image Cropped - ID: {$property->id}");
         }
