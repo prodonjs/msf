@@ -40,9 +40,6 @@
                     </li>
                     <li>|
                     </li>
-                    <li>
-                        <a href="#hotels">Hotels</a>
-                    </li>
                 </ul>
                 <br>
                 <br>

@@ -21,7 +21,7 @@
     <label>Type</label>
     <select name="property[type]" required>
         {% for t in propertyTypes %}
-        <option value="{{ t|e }}">{{ t|e }}</option>
+        <option {% if t == property.type %} selected {% endif %} value="{{ t|e }}">{{ t|e }}</option>
         {% endfor %}
     </select><br>
     <label>Amount Financed</label>

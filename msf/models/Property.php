@@ -19,17 +19,18 @@ class Property {
      * Valid type values
      */
     public static $validTypes = array(
-        'Multi-Family',
-        'Retail',
+        'Industry',
+        'Hotel',
+	'Multi-Family',
         'Office',
-        'Industry'
+        'Retail'
     );
 
     /**
      * Identifer
      * @var string
      */
-	public $id;
+    public $id;
 
     /**
      * Name of property
