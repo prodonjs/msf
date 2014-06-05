@@ -8,6 +8,18 @@
 {% endblock %}
 
 {% block content %}
+{% if imageDimensions[0] != imageSettings.dimensions.width or imageDimensions[1] != imageSettings.dimensions.height %}
+<p id="image-size-alert" class="alert">
+  Image size is not optimal:<br>
+  Uploaded property images should are scaled and should be
+  {{ imageSettings.dimensions.width }}px by
+  {{ imageSettings.dimensions.height }}px for optimal quality. Your
+  image is {{ imageDimensions[0] }}px by {{ imageDimensions[1] }}px.<br><br>
+  Use the cropping tool below to select the appropriate part of the image
+  to keep and click Save Property.
+</p>
+{% endif %}
+
 <a class="backPropertiesLink" href="{{ indexUrl }}" >Back to Properties list</a>
 <form id="properties-edit-form" action="{{ editUrl }}" method="post" enctype="multipart/form-data">
     <input type="hidden" name="_METHOD" value="PUT" />
@@ -34,16 +46,6 @@
         Click and Drag to Crop the Image
         <button type="button" id="clear-crop">Clear Crop</button>
     </p>
-    <p id="image-size-alert" class="alert" style="display: none">
-        Image size is not optimal:<br>
-        Uploaded property images should are scaled and should be
-        {{ imageSettings.dimensions.width }}px by
-        {{ imageSettings.dimensions.height }}px for optimal quality. Your
-        image is <span id="image-width"></span>px by
-        <span id="image-height"></span>px.<br><br>
-        Use the cropping tool below to select the appropriate part of the image
-        to keep and click Save Property.
-    </p>
     <input type="hidden" name="image[dimensions]"/>
     <img id="property-image" src="{{ imageSettings.path ~ "/" ~ property.image.name }}" alt="{{ p.name }} image" /><br>
     <label>Replace Image</label>
@@ -58,12 +60,8 @@
 <script>
     $(document).ready(function() {
         var jcrop_api;
-        var preferredWidth = {{ imageSettings.dimensions.width }};
-        var preferredHeight = {{ imageSettings.dimensions.height }};
         $('#property-image').Jcrop({
-            minSize: [preferredWidth, preferredHeight],
-            maxSize: [preferredWidth, preferredHeight],
-            setSelect: [0, 0, preferredWidth, preferredHeight],
+            aspectRatio: {{ imageSettings.dimensions.width }} / {{ imageSettings.dimensions.height }},
             onSelect: function(c) {
                 var dimensions = [Math.floor(c.x), Math.floor(c.y), Math.floor(c.w), Math.floor(c.h)];
                 $('input[name="image[dimensions]"]').val(dimensions.join(','));
@@ -76,16 +74,6 @@
             jcrop_api.release();
             $('input[name="image[dimensions]"]').val('');
         });
-    });
-    $(window).load(function() {
-        var width = $('#property-image').width();
-        var height = $('#property-image').height();
-        $('#image-width').html(width);
-        $('#image-height').html(height);
-        if (width != {{ imageSettings.dimensions.width }}
-            || height != {{ imageSettings.dimensions.height }}) {
-            $('#image-size-alert').show();
-        }
     });
 </script>
 {% endblock %}

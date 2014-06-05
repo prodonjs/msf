@@ -108,13 +108,15 @@ $app->group('/admin/properties', function() use ($app) {
     $app->get('/edit/:id', function($id) use ($app) {
         try {
             $property = \msf\models\Property::Get($id, $app->dataSource);
+	    $imageDimensions = $property->image->getDimensions();
             $app->render('admin_properties_edit.twig', array(
                 'property' => $property,
                 'pageTitle' => 'Edit Property',
                 'propertyTypes' => \msf\models\Property::$validTypes,
                 'editUrl' => $app->urlFor('admin_properties_edit', array('id' => $id)),
                 'indexUrl' => $app->urlFor('admin_properties_index'),
-                'imageSettings' => $app->imageSettings
+                'imageSettings' => $app->imageSettings,
+                'imageDimensions' => $imageDimensions
             ));
         }
         catch (\RuntimeException $e) {
@@ -148,6 +150,11 @@ $app->group('/admin/properties', function() use ($app) {
             $property->image->cropToDimensions(
                 $dimensions[0], $dimensions[1], $dimensions[2], $dimensions[3]);
             $property->image->scaleImage(
+                $app->imageSettings['dimensions']['width'],
+                $app->imageSettings['dimensions']['height'],
+                false
+            );
+	    $property->image->scaleImage(
                 $app->imageSettings['dimensions']['thumbnailWidth'],
                 $app->imageSettings['dimensions']['thumbnailHeight'],
                 true

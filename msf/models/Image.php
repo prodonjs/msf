@@ -68,9 +68,8 @@ class Image {
      */
     public function scaleImage($width, $height, $isThumbnail=true) {
         $image = $this->_getImageResource();
-        list($newWidth, $newHeight, $origWidth, $origHeight) =
+	list($newWidth, $newHeight, $origWidth, $origHeight) =
              $this->_getScaledDimensions($width, $height);
-
         $scaled = @imagecreatetruecolor($newWidth, $newHeight);
         imagecopyresampled($scaled, $image, 0, 0, 0, 0, $newWidth,
                          $newHeight, $origWidth, $origHeight);
@@ -104,29 +103,37 @@ class Image {
     }
 
     /**
+     * Returns an array with the width and height of the image
+     * @return array
+     */
+    public function getDimensions() {
+        return getimagesize($this->fullPath);
+    }
+
+    /**
      * Accepts preferred width and height value and returns
      * an array with:
-     * (new-scaled width, new-scaled height, orig width, orig height)
+     * (new-scaled width, new-scaled height,
+     * original width, original height)
      * @param type $width
      * @param type $height
      * @return array
      */
     private function _getScaledDimensions($width, $height) {
-        $sizeInfo = getimagesize($this->fullPath);
+        $sizeInfo = $this->getDimensions();
         $origWidth = (int) $sizeInfo[0];
         $origHeight = (int) $sizeInfo[1];
 
-        if($origWidth > $origHeight) {
-            // Wide image
-            $newWidth = $width;
-            $newHeight = round($origHeight * ($newWidth / $origWidth));
+	$newRatio = $width / $height;
+        if ($newRatio >= 1) {
+	  // New image should be square or wide
+	  $factor = $width / $origWidth;
         }
         else {
-            // Tall image
-            $newHeight = $height;
-            $newWidth = round($origWidth * ($newHeight / $origHeight));
+          // New image should be tall
+	  $factor = $height / $origHeight;
         }
-        return array($newWidth, $newHeight, $origWidth, $origHeight);
+	return array($origWidth * $factor, $origHeight * $factor, $origWidth, $origHeight);
     }
 
     /**
