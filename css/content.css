@@ -187,7 +187,6 @@
 }
 
 .onDeck p{
-    float:left;
     text-align: left;
     z-index: 1;
     position: relative;
