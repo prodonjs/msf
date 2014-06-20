@@ -32,7 +32,7 @@
                     </div>
                     <div class="aboutSquares">
                         <h2>
-                            SERVICE
+                            SERVICING
                         </h2><a href="#"><span class="service"><!--Image Replacement --></span></a>
                     </div>
                 </div>
@@ -94,7 +94,7 @@
                     </p>
                     <br>
                     <p>
-                        Our leadership regularly give back to the community through various charities. They also
+                        Our leadership regularly gives back to the community through various charities. They also
                         provide industry education, having lectured for both the Mortgage Bankers of America and for
                         the MBA Real Estate Finance classes at The Ohio State University.
                     </p>
@@ -110,7 +110,7 @@
                     <p>
                         Mortgage loan servicing has become an integral component of MS&F, as most correspondent lending
                         relationships have had increased demands placed on them by rating and regulatory agencies. We
-                        currently services upward of $1 billion in commercial loans in 22 states.
+                        currently service upward of $1 billion in commercial loans in 22 states.
                     </p>
                     <br>
                     <p>

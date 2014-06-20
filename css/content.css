@@ -14,6 +14,8 @@
     font-weight: 100;
     margin: 0 0 25px 0;
     color: #252469;
+    text-align: justify;
+    line-height: 14pt;
 }
 
 #contentWrapper ul{
@@ -28,7 +30,7 @@
 
 /*************HOME****************/
 #contentWrapper .homeH1{
-    font-size: 10pt;
+    font-size: 11pt;
 
     line-height: 15pt;
 }
@@ -329,7 +331,7 @@
 }
 
 .aboutSquares a span{
-    background: url(../images/aboutIcons.jpg) no-repeat;
+    background: url(../images/aboutIcons.png) no-repeat;
     height: 125px;
     width: 125px;
     display: block;
@@ -383,7 +385,7 @@
     padding: 40px;
     color: white;
     font-size: 11pt;
-    font-weight: 400;
+    font-weight: 200;
     line-height: 1.5em;
 
     display: none;
@@ -397,10 +399,8 @@
     letter-spacing: .25em;
 }
 
-.company_info{background: #5b3c00;}
-.market_info{background: #146000;}
-.staff_info{background: #ff8a00;}
-.service_info{background: #b01313;}
+.company_info, .market_info, .staff_info, .service_info{background: #828384;}
+
 
 
 

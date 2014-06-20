@@ -7,14 +7,16 @@
                 </form>
                 <ul class="socialFooter">
                     <li>
-                        <a href="" target="_blank"><img src="images/linkedin-icon-blue.png"></a>
+                        <a href="https://www.linkedin.com/company/morris-smith-&-feyh-incorporated" target="_blank"><img src="images/linkedin-icon-blue.png"></a>
                     </li>
+<!--
                     <li>
                         <a href="" target="_blank"><img src="images/twitter-icon-blue.png"></a>
                     </li>
                     <li>
                         <a href="" target="_blank"><img src="images/facebook-icon-blue.png"></a>
                     </li>
+-->
                 </ul>
                 <p>
                     (614) 396-5970
@@ -32,6 +34,7 @@
                 <p>
                     Copyright © Morris, Smith & Feyh, Incorporated
 		</p>
-                <a href="/msf/admin/properties/">Administration</a>
+		<br/><br/>
+                <a id="adminLink" href="/msf/admin/properties/">Administration</a>
             </div>
         </div>
