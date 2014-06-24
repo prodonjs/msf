@@ -1,10 +1,12 @@
         <div id="footerWrapper">
             <div id="footer">
                 <a href="index.php" id="logoFooter"><span><!-- image replacement --></span></a>
+                <!--
                 <form>
                     <input alt="submitButton" id="submitBtn" src="images/arrow-blue.png" type="image" value="submit">
                     <input class="emailFooter" placeholder="enter email for company news" type="text">
                 </form>
+                -->
                 <ul class="socialFooter">
                     <li>
                         <a href="https://www.linkedin.com/company/morris-smith-&-feyh-incorporated" target="_blank"><img src="images/linkedin-icon-blue.png"></a>
@@ -36,5 +38,19 @@
 		</p>
 		<br/><br/>
                 <a id="adminLink" href="/msf/admin/properties/">Administration</a>
+                        <div>
+            	<ul id="links">
+            		<li><a href="/">Home</a></li>
+            		<li><a href="loan-production.php">Loan Production</a></li>
+            		<li><a href="recent-financings.php">Recent Financings</a></li>
+            		<li><a href="about.php">About</a></li>
+            		<li><a href="key-personnel">Key Personnel</a></li>
+            	</ul>
             </div>
+            
+            </div>
+            
+
+            
+            
         </div>

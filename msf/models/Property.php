@@ -19,7 +19,7 @@ class Property {
      * Valid type values
      */
     public static $validTypes = array(
-        'Industry',
+        'Industrial',
         'Hotel',
 	'Multi-Family',
         'Office',

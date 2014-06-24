@@ -158,7 +158,18 @@ Bob’s loan production career took him to Bank One and later to Diamond Savings
 						In 1991, Bob joined MS&F and his responsibilities include solving the financing needs of developers and investors of real estate with the placement of construction and permanent loans and developing and maintaining relationships with financial institutions.
                     </p><img src="images/personnel/bob_smith_msandf.jpg">
                 </div>            
-                
+                                  <div>
+                    <h2>
+                        Elizabeth Merk Snezek
+                        <br>
+                        Senior Analyst
+                        <a class="vcards" href="vcards/ElizabethMSnezek.vcf"><img class="vcard" src="vcards/vcardicon.png"/></a>
+                    </h2>
+                    <p>
+                        Beth Merk is a Senior Analyst of Morris, Smith & Feyh, Incorporated (“MS&F”). Beth works in the Cleveland office of MS&F and is responsible for supporting her colleagues in both traditional commercial mortgage loan transactions as well as Credit Tenant Lease arrangements. After graduating from Bowling Green State University with a Bachelor’s of Science degree in Finance in 2004, Beth has had the opportunity to work in areas of increasing responsibility for both the retail banking and corporate banking worlds. Prior to joining MS&F, Beth worked at KeyBank for nearly four years. Her career at KeyBank started as an analyst in the Life/Pension group, and then she proceeded to work as an associate of the private placement group within the KeyBanc Capital Markets division, where Beth’s focus was the Credit Tenant Lease product, structuring over $300 million in Credit Tenant Lease financing.
+                    </p>
+                    <img src="images/personnel/elizabeth_merk.jpg">
+                </div>
                 <div>
                     <h2>
                         A.J. Mangan
@@ -174,18 +185,7 @@ Bob’s loan production career took him to Bank One and later to Diamond Savings
                 </div>
                              
                   
-                  <div>
-                    <h2>
-                        Elizabeth Merk Snezek
-                        <br>
-                        Senior Analyst
-                        <a class="vcards" href="vcards/ElizabethMSnezek.vcf"><img class="vcard" src="vcards/vcardicon.png"/></a>
-                    </h2>
-                    <p>
-                        Beth Merk is a Senior Analyst of Morris, Smith & Feyh, Incorporated (“MS&F”). Beth works in the Cleveland office of MS&F and is responsible for supporting her colleagues in both traditional commercial mortgage loan transactions as well as Credit Tenant Lease arrangements. After graduating from Bowling Green State University with a Bachelor’s of Science degree in Finance in 2004, Beth has had the opportunity to work in areas of increasing responsibility for both the retail banking and corporate banking worlds. Prior to joining MS&F, Beth worked at KeyBank for nearly four years. Her career at KeyBank started as an analyst in the Life/Pension group, and then she proceeded to work as an associate of the private placement group within the KeyBanc Capital Markets division, where Beth’s focus was the Credit Tenant Lease product, structuring over $300 million in Credit Tenant Lease financing.
-                    </p>
-                    <img src="images/personnel/elizabeth_merk.jpg">
-                </div>
+
 
                 <div class="clearfix"></div><!-- END OF CONTENTWRAPPER -->
             </div><!-- END OF WRAPPER -->

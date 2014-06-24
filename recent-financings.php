@@ -16,7 +16,7 @@
                 </h1>
                 <ul id="propertyLinks">
                     <li>
-                        <a href="#all">ALL</a>
+                        <a href="#all" style="font-weight: bold">ALL</a>
                     </li>
                     <li>|
                     </li>
@@ -36,7 +36,7 @@
                     <li>|
                     </li>
                     <li>
-                        <a href="#industry">Industry</a>
+                        <a href="#industrial">Industrial</a>
                     </li>
                     <li>|
                     </li>
@@ -52,7 +52,10 @@
             $(document).ready(function($) {
                 // Handle filtering on anchor tags
                 $('a[href^="#"]').click(function() {
-                    var filter = $(this).attr('href').substr(1);
+		    // Set my link to bold, others to plain
+                    $('#propertyLinks a').css('font-weight', 'normal');
+                    $(this).css('font-weight', 'bold');
+		    var filter = $(this).attr('href').substr(1);
                     if (filter === 'all') {
                         $('div.listing').show();
                     }
