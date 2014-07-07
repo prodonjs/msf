@@ -55,7 +55,7 @@
                         Diana L. Thomas
                         <br>
                         Chief Financial Officer &#38; Director of Loan Servicing
-                        <a class="vcards" href="vcards/DianaThomas.vcf"><img class="vcard" src="vcards/vcardicon.png"/></a>
+                        <a class="vcards" href="vcards/Diana L Thomas.vcf"><img class="vcard" src="vcards/vcardicon.png"/></a>
                     </h2>
                     <p>
                         Diana Thomas is an Executive Vice President of Morris, Smith & Feyh, Incorporated (“MS&F”). Diana has more than thirty years of experience in accounting and commercial real estate fields. She obtained a B.S. degree in Accounting from The Ohio State University in 1978 and is a Certified Public Accountant (INACTIVE). Diana began her career as an auditor with KPMG in San Francisco, California where she specialized in banking and commercial real estate. After five years in public accounting, Diana joined Hewlett Packard in Palo Alto, California where she was involved in various areas of corporate accounting for three years. In 1991, Diana joined MS&F as Controller. A few years after joining the Company she was promoted to Chief Financial Officer where she became responsible for all financial aspects of MS&F and related entities. For the past nine years, she has been responsible for overseeing the Servicing Department. During Diana’s tenure in this area she developed a strong system of internal controls to assure both the accuracy and security of MS&F’s mortgage loan portfolio. This was accomplished through the implementation of Synergy, a loan servicing software; the utilization of various online banking products and services; and the automation of in-house procedures. Diana continually reviews processes and procedures in order to ensure the servicing department is operating efficiently as well as providing accurate and timely information to both our borrowers and lenders.
@@ -66,7 +66,7 @@
                         Michael J. Feyh
                         <br>
                         Senior Vice President
-                        <!-- <a class="vcards" href="vcards/JeffreyMMorris.vcf"><img class="vcard" src="vcards/vcardicon.png"/></a> -->
+                        <a class="vcards" href="vcards/Michael J Feyh.vcf"><img class="vcard" src="vcards/vcardicon.png"/></a>
                     </h2>
                     <p>
                         Mike Feyh is a Senior Vice President of Morris, Smith & Feyh, Incorporated (“MS&F”). Mike formally was an original founding shareholder of the company in 1985 and has over thirty years of experience in real estate finance. After graduating from The Ohio State University with a B. A. degree, his career began with The Galbreath Company as a commercial loan officer. Mike’s responsibilities included the administration of construction loans and loan workouts for properties ranging from single family homes to large scale commercial projects. In 1974, he joined Nationwide Real Estate where he was a loan officer in the commercial construction loan department. Mike later joined Park Financial Services where he managed the commercial construction loan department and also assisted the production department in the origination and underwriting of loans. After successfully expanding Park Financials loan portfolio, he formed his own company, Regency Mortgage, which later merged into MS&F. Mike’s responsibilities at MS&F include overseeing all of the activities of the firm's Mortgage Loan Closing & Compliance Department, which involves coordination between the Lender and the Borrower to assure a prompt closing of every loan commitment and seamless transition of the new loan to the Mortgage Loan Servicing Department. Mike has substantial involvement in the outside investment and development related activities in an oversight capacity by utilizing his knowledge and experience in construction lending to manage the Company’s risk in these transactions. He also has outside interests that include alumni activities of Ohio State University.
@@ -78,7 +78,7 @@
                         Joe Gonzales
                         <br>
                         Senior Vice President
-                        <a class="vcards" href="vcards/JoeGonzales.vcf"><img class="vcard" src="vcards/vcardicon.png"/></a>
+                        <a class="vcards" href="vcards/Joe Gonzales.vcf"><img class="vcard" src="vcards/vcardicon.png"/></a>
                     </h2>
                     <p>
                         Joe Gonzales is a Senior Vice President of Morris Smith & Feyh, Incorporated (“MS&F”).  Joe manages the Cleveland office of MS&F and is responsible for traditional commercial mortgage loan origination as well as Credit Tenant Lease arrangements. After graduating from Bowling Green State University with a Bachelor's of Science  degree in Finance, Joe started his banking career with the predecessor to KeyBank in 1991 as a Corporate Banking Analyst. In 1993, he began in the Commercial Real Estate department, progressing from Analyst to Relationship Manager. During this time Joe was involved with structuring, origination, and portfolio management for construction lending, acquisition financing, and homebuilder financing for middle market real estate clients.
@@ -97,7 +97,7 @@
                         Chad B Kiner
                         <br>
                         Senior Vice President
-	                    <a class="vcards" href="vcards/ChadKiner.vcf"><img class="vcard" src="vcards/vcardicon.png"/></a>
+	                    <a class="vcards" href="vcards/Chad B Kiner.vcf"><img class="vcard" src="vcards/vcardicon.png"/></a>
                     </h2>
                     <p>
                         Chad Kiner is a Senior Vice President of Morris, Smith & Feyh, Incorporated (“MS&F”). Chad works directly with his clients on the origination of new mortgage loan opportunities. He is a real estate/business development professional with more than fourteen years of experience in real estate finance, origination, analysis, underwriting, development, acquisitions/dispositions and portfolio management. After earning his BS in Business in 1998 from The Ohio State University, Chad expanded his knowledge in the real estate industry by receiving his Masters in Real Estate from the University of Florida in 2003 where his education taught him the basic skills of commercial real estate, including but not limited to spreadsheet modeling, valuation analysis, development, market research and oral/verbal communication.
@@ -114,7 +114,7 @@
                         David L. Mathewson
                         <br>
                         Senior Vice President
-                                            <a class="vcards" href="vcards/DavidMathewson.vcf"><img class="vcard" src="vcards/vcardicon.png"/></a>
+                                            <a class="vcards" href="vcards/David L Mathewson.vcf"><img class="vcard" src="vcards/vcardicon.png"/></a>
 
                     </h2>
                     <p>
@@ -130,7 +130,7 @@
                         Scott L. Moore 
                         <br>
                         Senior Vice President
-                        <a class="vcards" href="vcards/ScottMoore.vcf"><img class="vcard" src="vcards/vcardicon.png"/></a>                    </h2>
+                        <a class="vcards" href="vcards/Scott L Moore.vcf"><img class="vcard" src="vcards/vcardicon.png"/></a>                    </h2>
                     <p>
                         Scott Moore is a Senior Vice President of Morris, Smith & Feyh Incorporated (“MS&F”).  Scott is responsible for accelerating the firm’s growth with emphasis on multifamily and seniors housing mortgage origination activity.
                         <br>
@@ -146,7 +146,7 @@
                         Robert W. Smith
                         <br>
                         Senior Vice President
-                        <a class="vcards" href="vcards/RobertSmith.vcf"><img class="vcard" src="vcards/vcardicon.png"/></a>
+                        <a class="vcards" href="vcards/Robert W Smith.vcf"><img class="vcard" src="vcards/vcardicon.png"/></a>
                     </h2>
                     <p>
                         Bob Smith is a Senior Vice President of Morris, Smith & Feyh, Incorporated (“MS&F”). Bob  has over thirty years of experience in the commercial real estate industry. He graduated from Grove City College, PA in 1974 with a Business Administration degree and began his real estate career as a real estate appraiser for an MAI firm in Buffalo, New York. In 1977, he relocated to Columbus, Ohio to work in the appraisal department for Buckeye Federal Savings & Loan. While employed at Buckeye Federal, Bob became involved in the origination of loans which led to the decision in 1979 to concentrate on loan production and origination.
@@ -158,12 +158,25 @@ Bob’s loan production career took him to Bank One and later to Diamond Savings
 						In 1991, Bob joined MS&F and his responsibilities include solving the financing needs of developers and investors of real estate with the placement of construction and permanent loans and developing and maintaining relationships with financial institutions.
                     </p><img src="images/personnel/bob_smith_msandf.jpg">
                 </div>            
+                <div>
+                    <h2>
+                        Tina Fiero-Gwynnk
+                        <br>
+                        Vice President
+                        <a class="vcards" href="vcards/Tina M Fiero.vcf"><img class="vcard" src="vcards/vcardicon.png"/></a>
+                    </h2>
+                    <p>Tina Fiero-Gwynn is a Vice President of Morris, Smith & Feyh, Incorporated (“MS&amp;F”) and is in charge of the Loan Closing Department.  She began her career at the Galbreath-Huff Companies; a Columbus based commercial real estate developer who managed a large office building and industrial portfolio. After gaining valuable knowledge, she continued her career with a Columbus apartment developer who developed and managed the more than 2,000 apartments in a five state region.
+                    <br/><br/>Since joining MS&F in 1998, she has assisted with underwriting loans and lender presentations until 2012 where she was elevated to oversee the closing of all transactions numerous lenders.  In 2013 Tina managed a transaction stream of over 40 loan closings.</p>
+                    
+                    <img src="images/personnel/tina_fiero.jpg">
+                </div>
+
                                   <div>
                     <h2>
                         Elizabeth Merk Snezek
                         <br>
                         Senior Analyst
-                        <a class="vcards" href="vcards/ElizabethMSnezek.vcf"><img class="vcard" src="vcards/vcardicon.png"/></a>
+                        <a class="vcards" href="vcards/Elizabeth Merk Snezek.vcf"><img class="vcard" src="vcards/vcardicon.png"/></a>
                     </h2>
                     <p>
                         Beth Merk is a Senior Analyst of Morris, Smith & Feyh, Incorporated (“MS&F”). Beth works in the Cleveland office of MS&F and is responsible for supporting her colleagues in both traditional commercial mortgage loan transactions as well as Credit Tenant Lease arrangements. After graduating from Bowling Green State University with a Bachelor’s of Science degree in Finance in 2004, Beth has had the opportunity to work in areas of increasing responsibility for both the retail banking and corporate banking worlds. Prior to joining MS&F, Beth worked at KeyBank for nearly four years. Her career at KeyBank started as an analyst in the Life/Pension group, and then she proceeded to work as an associate of the private placement group within the KeyBanc Capital Markets division, where Beth’s focus was the Credit Tenant Lease product, structuring over $300 million in Credit Tenant Lease financing.
@@ -175,7 +188,7 @@ Bob’s loan production career took him to Bank One and later to Diamond Savings
                         A.J. Mangan
                         <br>
                         Loan Origination Analyst
-                        <a class="vcards" href="vcards/AJMangan.vcf"><img class="vcard" src="vcards/vcardicon.png"/></a>
+                        <a class="vcards" href="vcards/AJ Mangan.vcf"><img class="vcard" src="vcards/vcardicon.png"/></a>
                     </h2>
                     <p>
 						A.J. Mangan is a loan origination analyst at Morris, Smith and Feyh, Incorporated (“MS&F”). A.J. has been employed with the company since 2010 as an intern, prior to graduation, which led to a full time position in 2012. A.J. graduated from Fisher College of Business at The Ohio State University with a Bachelor's of Science degree in Business Administration in Real Estate. His education taught him the basic skills of commercial real estate, including but not limited to valuation analysis, appraisal, market research, Argus modeling, spreadsheet modeling and development.<br/><br/> 
