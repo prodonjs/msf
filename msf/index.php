@@ -207,5 +207,15 @@ $app->get('/properties/recent/:number', function($number) use ($app) {
     ));
 })->conditions(array('number' => '\d+'))->name('properties_recent');
 
+$app->get('/interest_rates/', function() use ($app) {
+    // Use the InterestRate model to get the data
+    $interestRate = new \msf\models\InterestRate(
+            \msf\models\InterestRate::SOURCE_URL);
+    $rates = $interestRate->parse();
+    $app->log->info("Interest Rates");
+    $app->response->headers->set('Content-Type', 'application/json');
+    $app->response->setBody(json_encode($rates));
+});
+
 // Run app
 $app->run();
