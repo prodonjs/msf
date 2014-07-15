@@ -160,7 +160,7 @@ Bob’s loan production career took him to Bank One and later to Diamond Savings
                 </div>            
                 <div>
                     <h2>
-                        Tina Fiero-Gwynnk
+                        Tina Fiero-Gwynn
                         <br>
                         Vice President
                         <a class="vcards" href="vcards/Tina M Fiero.vcf"><img class="vcard" src="vcards/vcardicon.png"/></a>
