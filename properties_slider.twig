@@ -7,7 +7,7 @@
                 <h2>{{ p.name|e }}</h2>
                 <p>{{ p.city|e }}, {{ p.state|e }} {{ p.zip }}</p>
                 <p><span>Financed Amount</span><br/>${{ p.amountFinanced|number_format }}</p>
-                <p><span>Closed</span><br/>{{ p.closingDate|date("m/d/Y") }}</p>
+                <p><span>Closed</span><br>{{ p.closingDate|date("F Y") }}</p>
             </div>
         </li>
         {% endfor %}
@@ -28,7 +28,7 @@
             {% endif %}
             </p>
             <p class="">Financed ${{ p.amountFinanced|number_format }}</p>
-            <p class="">Closed {{ p.closingDate|date("m/d/Y") }}</p>
+            <p class="">{{ p.closingDate|date("F Y") }}</p>
             <span class=""></span>
         </a>
         <div class="clearfix"></div>

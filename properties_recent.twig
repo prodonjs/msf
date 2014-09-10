@@ -23,7 +23,7 @@
     <p class="location"><span>Location: </span>{{ p.city ~ ", " ~ p.state|e }}</p>
     <p class="amount"><span>Financed: </span>${{ p.amountFinanced|number_format }}</p>
     <p class="type"><span>Type: </span>{{ p.type|e }}</p>
-    <p class="date"><span>Closed On: </span>{{ p.closingDate }}</p>
+    <p class="date"><span>Closed On: </span>{{ p.closingDate|date("F Y")}}</p>
     <p class="description">
         <span>Description:</span><br>
         {{ p.description }}
