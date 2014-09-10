@@ -2,7 +2,7 @@
             <p>
                 (614) 396-5970
             </p>
-            
+
             <!--<a href=""><img src="images/arrow.png">CLIENT LOGIN</a>-->
         </div><a href="index.php" id="logo">MS&F Real Estate Capital<span><!-- image replacement --></span></a>
         <ul class="mainNav">

@@ -12,7 +12,7 @@
 </script>
     </head>
     <body class="contactBody">
-        
+
         <div id="wrapper">
             <?php include_once('header.php'); ?>
             <div id="contentWrapper">
@@ -40,7 +40,7 @@
                         <label for="phone">Phone</label> <input id="phone" name="phone" type="text">
                         <br>
                         <br>
-                        <label for="message">Message<span class="requiredStyle">*</span></label> 
+                        <label for="message">Message<span class="requiredStyle">*</span></label>
                         <textarea class="required" cols="40" id="message" name="message" rows="8">
 </textarea>
                         <br>

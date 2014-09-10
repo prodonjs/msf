@@ -7,7 +7,7 @@
         </title><?php include 'css_js.php'; ?>
     </head>
     <body class="aboutBody">
-        
+
         <div id="wrapper">
             <?php include_once('header.php'); ?>
             <div id="contentWrapper">

@@ -12,7 +12,7 @@
 </script>
     </head>
     <body>
-        
+
         <div id="wrapper">
             <?php include_once('header.php'); ?>
             <div id="footerPush">

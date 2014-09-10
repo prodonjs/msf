@@ -7,7 +7,7 @@
         </title><?php include 'css_js.php'; ?>
     </head>
     <body class="keyBody">
-        
+
         <div id="wrapper">
             <?php include_once('header.php'); ?>
             <div id="contentWrapper">
@@ -49,7 +49,7 @@
                         many charitable causes. He resides in Lexington, Ohio.
                     </p><img src="images/personnel/jeff_morris_msandf.jpg">
                 </div>
-                
+
                                 <div>
                     <h2>
                         Diana L. Thomas
@@ -73,7 +73,7 @@
                     </p><img src="images/personnel/mike_feyh.jpg">
                 </div>
                                 <div>
-                               
+
                     <h2>
                         Joe Gonzales
                         <br>
@@ -89,12 +89,12 @@
                         <br>
                       From 2006 to early 2010, Joe was one of the leading originators, having completed over $800 million in CMBS, Life Company, Credit Tenant Lease, and Agency financing (Fannie Mae, Freddie Mac, and HUD). After nearly seventeen years in all facets of commercial real estate, Joe became a member of MS&F in 2010.
                     </p>
-                    
+
                     <img src="images/personnel/joe_gonzales.jpg">
                 </div>
                                 <div>
                     <h2>
-                        Chad B Kiner
+                        Chad B. Kiner
                         <br>
                         Senior Vice President
 	                    <a class="vcards" href="vcards/Chad B Kiner.vcf"><img class="vcard" src="vcards/vcardicon.png"/></a>
@@ -127,7 +127,7 @@
                 </div>
                                                 <div>
                     <h2>
-                        Scott L. Moore 
+                        Scott L. Moore
                         <br>
                         Senior Vice President
                         <a class="vcards" href="vcards/Scott L Moore.vcf"><img class="vcard" src="vcards/vcardicon.png"/></a>                    </h2>
@@ -157,7 +157,7 @@ Bob’s loan production career took him to Bank One and later to Diamond Savings
                         <br>
 						In 1991, Bob joined MS&F and his responsibilities include solving the financing needs of developers and investors of real estate with the placement of construction and permanent loans and developing and maintaining relationships with financial institutions.
                     </p><img src="images/personnel/bob_smith_msandf.jpg">
-                </div>            
+                </div>
                 <div>
                     <h2>
                         Tina Fiero-Gwynn
@@ -167,7 +167,7 @@ Bob’s loan production career took him to Bank One and later to Diamond Savings
                     </h2>
                     <p>Tina Fiero-Gwynn is a Vice President of Morris, Smith & Feyh, Incorporated (“MS&amp;F”) and is in charge of the Loan Closing Department.  She began her career at the Galbreath-Huff Companies; a Columbus based commercial real estate developer who managed a large office building and industrial portfolio. After gaining valuable knowledge, she continued her career with a Columbus apartment developer who developed and managed the more than 2,000 apartments in a five state region.
                     <br/><br/>Since joining MS&F in 1998, she has assisted with underwriting loans and lender presentations until 2012 where she was elevated to oversee the closing of all transactions numerous lenders.  In 2013 Tina managed a transaction stream of over 40 loan closings.</p>
-                    
+
                     <img src="images/personnel/tina_fiero.jpg">
                 </div>
 
@@ -191,13 +191,13 @@ Bob’s loan production career took him to Bank One and later to Diamond Savings
                         <a class="vcards" href="vcards/AJ Mangan.vcf"><img class="vcard" src="vcards/vcardicon.png"/></a>
                     </h2>
                     <p>
-						A.J. Mangan is a loan origination analyst at Morris, Smith and Feyh, Incorporated (“MS&F”). A.J. has been employed with the company since 2010 as an intern, prior to graduation, which led to a full time position in 2012. A.J. graduated from Fisher College of Business at The Ohio State University with a Bachelor's of Science degree in Business Administration in Real Estate. His education taught him the basic skills of commercial real estate, including but not limited to valuation analysis, appraisal, market research, Argus modeling, spreadsheet modeling and development.<br/><br/> 
+						A.J. Mangan is a loan origination analyst at Morris, Smith and Feyh, Incorporated (“MS&F”). A.J. has been employed with the company since 2010 as an intern, prior to graduation, which led to a full time position in 2012. A.J. graduated from Fisher College of Business at The Ohio State University with a Bachelor's of Science degree in Business Administration in Real Estate. His education taught him the basic skills of commercial real estate, including but not limited to valuation analysis, appraisal, market research, Argus modeling, spreadsheet modeling and development.<br/><br/>
 										
 						During his tenure at MS&F, A.J. has been involved in the underwriting role which has led to the placement of over $1.0 billion in commercial real estate loans, which has included every major property type, in all regions of the continental United States. Loan sizes have ranged from $1 million up to a $70 million and loan products have included permanent, construction, forward, joint venture, bridge and mezzanine.
                     </p><img src="images/personnel/aj_mangan_msandf.jpg">
                 </div>
-                             
-                  
+
+
 
 
                 <div class="clearfix"></div><!-- END OF CONTENTWRAPPER -->

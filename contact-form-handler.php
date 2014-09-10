@@ -1,11 +1,11 @@
 <?php
-$siteroot = 'http://msandf.com/'; 
+$siteroot = 'http://msandf.com/';
 
-/* Ensure that a valid token has been passed by the form 
+/* Ensure that a valid token has been passed by the form
  * and that it reflects a timestamp no more than 5 minutes (300 seconds) ago */
 $token_threshold = time() - 300;
-if(!isset($_POST['token']) || $_POST['token'] < $token_threshold) { 
-    header('Location: contact.php');    
+if(!isset($_POST['token']) || $_POST['token'] < $token_threshold) {
+    header('Location: contact.php');
     exit;
 }
 
@@ -25,7 +25,7 @@ $message = "<div style='font-family:Verdana, Arial;font-size:14px;font-color:#22
     <b>Email:</b> ".$_POST['email']."<br />
     <br />
     <b>Phone:</b> ".$_POST['phone']."<br />
-    <br />  
+    <br />
     <b>Message:</b> ".$_POST['message']."<br />
 
     </div>";
