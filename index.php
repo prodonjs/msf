@@ -12,7 +12,7 @@
             <?php include_once('header.php'); ?>
             <div id="contentWrapper">
                 <h1 class="homeH1">
-                    For 30 years, sophisticated commercial borrowers have trusted Morris, Smith & Feyh, Incorporated (MS&F) to identify and execute the debt and equity solutions they need to capitalize on opportunities. We are owners and investors in commercial real estate who understand the interests of borrowers and lenders, and our full-service mortgage banking firm has financed over $6.0 billion of commercial real estate in 22 states. Every loan we have committed with our financially strong, market-leading lender clients has closed. <a href="about.php">Learn more about us</a>
+                    For 30 years, sophisticated commercial borrowers have trusted Morris, Smith & Feyh, Incorporated (MS&F) to identify and execute the debt and equity solutions they need to capitalize on opportunities. We are owners and investors in commercial real estate who understand the interests of borrowers and lenders, and our full-service mortgage banking firm has financed over $6.49 billion of commercial real estate in 22 states. Every loan we have committed with our financially strong, market-leading lender clients has closed. <a href="about.php">Learn more about us</a>
                 </h1>
                 <div id="recent-financings"></div>
 

@@ -41,7 +41,7 @@
                         COMPANY
                     </h3>
                     <p>
-                        Since 1984, MS&F has financed over $6.0 billion of commercial real estate in nearly every state
+                        Since 1984, MS&F has financed over $6.49 billion of commercial real estate in nearly every state
                         in the continental U.S.. We stand out for our ability, as real estate investors ourselves, to
                         anticipate and address challenges before they become issues.
                     </p>
