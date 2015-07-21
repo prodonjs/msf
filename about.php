@@ -78,7 +78,7 @@
                     </p>
                     <br>
                     <p>
-                        MS&F is headquartered in Columbus, Ohio and has an office in Cleveland, from which we are
+                        MS&F is headquartered in Columbus, Ohio from which we are
                         easily able to travel to meet our clients where they need us.
                     </p>
                     <p>
