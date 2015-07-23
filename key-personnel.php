@@ -73,26 +73,6 @@
                     </p><img src="images/personnel/mike_feyh.jpg">
                 </div>
                                 <div>
-
-                    <h2>
-                        Joe Gonzales
-                        <br>
-                        Senior Vice President
-                        <a class="vcards" href="vcards/Joe Gonzales.vcf"><img class="vcard" src="vcards/vcardicon.png"/></a>
-                    </h2>
-                    <p>
-                        Joe Gonzales is a Senior Vice President of Morris Smith & Feyh, Incorporated (“MS&F”).  Joe manages the Cleveland office of MS&F and is responsible for traditional commercial mortgage loan origination as well as Credit Tenant Lease arrangements. After graduating from Bowling Green State University with a Bachelor's of Science  degree in Finance, Joe started his banking career with the predecessor to KeyBank in 1991 as a Corporate Banking Analyst. In 1993, he began in the Commercial Real Estate department, progressing from Analyst to Relationship Manager. During this time Joe was involved with structuring, origination, and portfolio management for construction lending, acquisition financing, and homebuilder financing for middle market real estate clients.
-                        <br>
-                        <br>
-                        In 1998, Joe started the Ohio office of FINOVA Realty Capital as an Originator of CMBS mortgage loans, where he was one of their top rookie producers. In 2000, Joe was recruited by and returned to KeyBank as a Senior Credit Officer where Joe honed his skills with responsibility for portfolio credit quality and held individual approval authority up to $35.0 million for all types of transactions, including CMBS, Fannie Mae, Homebuilder, and all income property; as well as being the Chief Investment Officer of the Private Equity Group. During this five 5 year period, Joe was involved with over $5.0 billion in transactions. In 2006, he returned to the Origination role at KeyBank.
-                        <br>
-                        <br>
-                      From 2006 to early 2010, Joe was one of the leading originators, having completed over $800 million in CMBS, Life Company, Credit Tenant Lease, and Agency financing (Fannie Mae, Freddie Mac, and HUD). After nearly seventeen years in all facets of commercial real estate, Joe became a member of MS&F in 2010.
-                    </p>
-
-                    <img src="images/personnel/joe_gonzales.jpg">
-                </div>
-                                <div>
                     <h2>
                         Chad B. Kiner
                         <br>
@@ -171,18 +151,6 @@ Bob’s loan production career took him to Bank One and later to Diamond Savings
                     <img src="images/personnel/tina_fiero.jpg">
                 </div>
 
-                                  <div>
-                    <h2>
-                        Elizabeth Merk Snezek
-                        <br>
-                        Senior Analyst
-                        <a class="vcards" href="vcards/Elizabeth Merk Snezek.vcf"><img class="vcard" src="vcards/vcardicon.png"/></a>
-                    </h2>
-                    <p>
-                        Beth Merk is a Senior Analyst of Morris, Smith & Feyh, Incorporated (“MS&F”). Beth works in the Cleveland office of MS&F and is responsible for supporting her colleagues in both traditional commercial mortgage loan transactions as well as Credit Tenant Lease arrangements. After graduating from Bowling Green State University with a Bachelor’s of Science degree in Finance in 2004, Beth has had the opportunity to work in areas of increasing responsibility for both the retail banking and corporate banking worlds. Prior to joining MS&F, Beth worked at KeyBank for nearly four years. Her career at KeyBank started as an analyst in the Life/Pension group, and then she proceeded to work as an associate of the private placement group within the KeyBanc Capital Markets division, where Beth’s focus was the Credit Tenant Lease product, structuring over $300 million in Credit Tenant Lease financing.
-                    </p>
-                    <img src="images/personnel/elizabeth_merk.jpg">
-                </div>
                 <div>
                     <h2>
                         A.J. Mangan
